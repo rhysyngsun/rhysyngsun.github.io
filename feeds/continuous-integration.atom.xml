@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/continuous-integration.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2014-11-04T20:02:10-04:00</updated><entry><title>My Ideal Continuous Integration Server</title><link href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html" rel="alternate"></link><updated>2014-11-04T20:02:10-04:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2014-11-04:my-ideal-continuous-integration-server.html</id><summary type="html">&lt;p&gt;I've spent the last week looking at various CI solutions. My main criteria were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a flexible &lt;a href="http://martinfowler.com/bliki/ContinuousDelivery.html"&gt;Continuous Delivery&lt;/a&gt; &lt;a href="http://martinfowler.com/bliki/DeploymentPipeline.html"&gt;deployment pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ability to promote builds to various environments (QA, prod, etc)&lt;/li&gt;
+&lt;li&gt;alerting to our team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It started with an attempt at wrangling the defacto tool, &lt;a href="http://jenkins-ci.org"&gt;Jenkins&lt;/a&gt; into a usable system but that quickly proved to be an uphill battle.
+Overly complication configuration aside, the final straw with Jenkins was being unable to configure
+&lt;a href="https://help.github.com/articles/creating-webhooks"&gt;GitHub Web Hooks&lt;/a&gt;, however
+that capability was dependent on having GitHub configured as &lt;em&gt;the&lt;/em&gt; authentication method for users.&lt;/p&gt;
+&lt;p&gt;That's a pretty flawed design that speaks to a poor separation of concerns;
+authentication strategy should not be tangled with an unrelated feature of the product.
+Overall, I think the legacy of Jenkins' plugin architecture is weighing it (and its users) down.&lt;/p&gt;
+&lt;p&gt;I also took a look at numerous open source competitors to Jenkins as well as SaaS-based solutions.
+Pretty much all of these fell short on Goal #2, which lead to me a conclusion that everyone out there either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;is deploying code straight into production via automation (Continuous Deployment)&lt;/li&gt;
+&lt;li&gt;poured weeks of developer time into Jenkins&lt;/li&gt;
+&lt;li&gt;gave up on Jenkins and rolled a custom solution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I wasn't ready to commit to any of these at the immediate moment, so the situation was looking pretty bleak.
+I &lt;a href="https://twitter.com/rhysyngsun/status/461276722382790656"&gt;threw out a tweet&lt;/a&gt; to vent my frustration at the state of CI/CD solutions.
+&lt;a href="https://twitter.com/twchad"&gt;Chad Wathington&lt;/a&gt; replied that &lt;a href="http://www.thoughtworks.com/"&gt;ThoughtWorks&lt;/a&gt; had recently open sourced their Continuous Delivery solution &lt;a href="https://github.com/gocd/gocd/"&gt;named Go&lt;/a&gt; (not to be confused with Golang, an issue they're &lt;a href="https://github.com/gocd/gocd/issues/128"&gt;acutely aware of&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;So far, I'm pretty impressed. As far as open source self-hostable CI solutions go, it's not nearing an complicated and limiting as Jenkins.
+It does seem a &lt;em&gt;tad&lt;/em&gt; more complicated than I need, but it's likely because my initial pass at getting a pipeline is intended to be a simple one.&lt;/p&gt;
+&lt;p&gt;I still feel like Go is needs a lot of work and hope to contribute to it myself at some point (although I wish it wasn't written in Java).&lt;/p&gt;
+&lt;p&gt;I've also got feeling that I should take a stab at my own solution (to be done on my own time, not my employer's).
+There's a lot to still be done in this space and I have a gut feeling that it needs a fresh approach that incorporates all these learnings.
+The fresh start is needed because an ideal solution for CI needs back pressure against complexity.&lt;/p&gt;</summary><category term="Continuous Integration"></category><category term="Continuous Delivery"></category></entry></feed>

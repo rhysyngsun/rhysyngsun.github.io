@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhysyngsun's Blog</title><link>http://rhysyngsun.com/</link><description></description><atom:link href="http://rhysyngsun.com/feeds/nathan-levesque.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 04 Nov 2014 20:02:10 -0400</lastBuildDate><item><title>My Ideal Continuous Integration Server</title><link>http://rhysyngsun.com/my-ideal-continuous-integration-server.html</link><description>&lt;p&gt;I've spent the last week looking at various CI solutions. My main criteria were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a flexible &lt;a href="http://martinfowler.com/bliki/ContinuousDelivery.html"&gt;Continuous Delivery&lt;/a&gt; &lt;a href="http://martinfowler.com/bliki/DeploymentPipeline.html"&gt;deployment pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ability to promote builds to various environments (QA, prod, etc)&lt;/li&gt;
+&lt;li&gt;alerting to our team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It started with an attempt at wrangling the defacto tool, &lt;a href="http://jenkins-ci.org"&gt;Jenkins&lt;/a&gt; into a usable system but that quickly proved to be an uphill battle.
+Overly complication configuration aside, the final straw with Jenkins was being unable to configure
+&lt;a href="https://help.github.com/articles/creating-webhooks"&gt;GitHub Web Hooks&lt;/a&gt;, however
+that capability was dependent on having GitHub configured as &lt;em&gt;the&lt;/em&gt; authentication method for users.&lt;/p&gt;
+&lt;p&gt;That's a pretty flawed design that speaks to a poor separation of concerns;
+authentication strategy should not be tangled with an unrelated feature of the product.
+Overall, I think the legacy of Jenkins' plugin architecture is weighing it (and its users) down.&lt;/p&gt;
+&lt;p&gt;I also took a look at numerous open source competitors to Jenkins as well as SaaS-based solutions.
+Pretty much all of these fell short on Goal #2, which lead to me a conclusion that everyone out there either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;is deploying code straight into production via automation (Continuous Deployment)&lt;/li&gt;
+&lt;li&gt;poured weeks of developer time into Jenkins&lt;/li&gt;
+&lt;li&gt;gave up on Jenkins and rolled a custom solution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I wasn't ready to commit to any of these at the immediate moment, so the situation was looking pretty bleak.
+I &lt;a href="https://twitter.com/rhysyngsun/status/461276722382790656"&gt;threw out a tweet&lt;/a&gt; to vent my frustration at the state of CI/CD solutions.
+&lt;a href="https://twitter.com/twchad"&gt;Chad Wathington&lt;/a&gt; replied that &lt;a href="http://www.thoughtworks.com/"&gt;ThoughtWorks&lt;/a&gt; had recently open sourced their Continuous Delivery solution &lt;a href="https://github.com/gocd/gocd/"&gt;named Go&lt;/a&gt; (not to be confused with Golang, an issue they're &lt;a href="https://github.com/gocd/gocd/issues/128"&gt;acutely aware of&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;So far, I'm pretty impressed. As far as open source self-hostable CI solutions go, it's not nearing an complicated and limiting as Jenkins.
+It does seem a &lt;em&gt;tad&lt;/em&gt; more complicated than I need, but it's likely because my initial pass at getting a pipeline is intended to be a simple one.&lt;/p&gt;
+&lt;p&gt;I still feel like Go is needs a lot of work and hope to contribute to it myself at some point (although I wish it wasn't written in Java).&lt;/p&gt;
+&lt;p&gt;I've also got feeling that I should take a stab at my own solution (to be done on my own time, not my employer's).
+There's a lot to still be done in this space and I have a gut feeling that it needs a fresh approach that incorporates all these learnings.
+The fresh start is needed because an ideal solution for CI needs back pressure against complexity.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Tue, 04 Nov 2014 20:02:10 -0400</pubDate><guid>tag:rhysyngsun.com,2014-11-04:my-ideal-continuous-integration-server.html</guid><category>Continuous Integration</category><category>Continuous Delivery</category></item><item><title>Connascence in RequireJS</title><link>http://rhysyngsun.com/connascence-in-requirejs.html</link><description>&lt;p&gt;I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.&lt;/p&gt;
+&lt;p&gt;We've all run across examples of complex code: a class with too many concerns, a function that's doing too many operations, or an abstraction in a place where it's unnecessary.&lt;/p&gt;
+&lt;p&gt;A few days after his passing, I watched a video of &lt;a href="http://en.wikipedia.org/wiki/Jim_Weirich"&gt;Jim Weirich&lt;/a&gt; of Rake fame &lt;a href="http://youtu.be/NLT7Qcn_PmI"&gt;giving a presentation&lt;/a&gt; on the concept of &lt;a href="http://en.wikipedia.org/wiki/Connascence_(computer_programming)"&gt;connascence&lt;/a&gt;. I highly recommend you watch it if you're unfamiliar with the topic.&lt;/p&gt;
+&lt;p&gt;This topic really hit on one of those things that I'd previously vaguely categorized as a "code smell." Code that's highly coupled makes for painful points when you have to change a behavior in the overall system. It's nice to have a quality metric for that now.&lt;/p&gt;
+&lt;p&gt;A few days later it struck me that this concept explains very well why I've always had trouble with this style of &lt;a href="http://requirejs.org/"&gt;RequireJS&lt;/a&gt; (this example lifted from their docs &lt;a href="http://requirejs.org/docs/api.html#defdep"&gt;here&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//my/shirt.js now has some dependencies, a cart and inventory&lt;/span&gt;
+&lt;span class="c1"&gt;//module in the same directory as shirt.js&lt;/span&gt;
+&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./cart&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./inventory&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;cart&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;inventory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;//return an object to define the &amp;quot;my/shirt&amp;quot; module.&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;large&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;addToCart&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nx"&gt;inventory&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;decrement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+            &lt;span class="nx"&gt;cart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In this example, there's an increasing Connascence of Order between the array of dependencies and the argument list as the number of dependencies for your module increase. Ideally, you should be keeping your dependency count as low as possible, but very often it slips over two or three, which is the point at which I'd say this type of connascence starts to become troublesome.&lt;/p&gt;
+&lt;p&gt;I'm also one of those folks who is very anal with making sure dependencies/imports are logically ordered and (if necessary) logically grouped. That means I'm occasionally inserting a dependency into list, rather than appending it.&lt;/p&gt;
+&lt;p&gt;Note that there's also a Connascence of Name between a dependency's name in the list and the filename of that module. There's no way to get away from that, but you can completely remove the Connascence of Order by changing to a CommonJS-ish style:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;//my/shirt.js now has some dependencies, a cart and inventory&lt;/span&gt;
+    &lt;span class="c1"&gt;//module in the same directory as shirt.js&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;cart&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./cart&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="nx"&gt;inventory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./inventory&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="c1"&gt;//return an object to define the &amp;quot;my/shirt&amp;quot; module.&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;large&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;addToCart&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nx"&gt;inventory&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;decrement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+            &lt;span class="nx"&gt;cart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The CommonJS style eliminates a whole class of programmer error. Sure you might have a few extra lines of code, but you've removed the need for the mental overhead of making sure the order is right in both places.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Thu, 06 Mar 2014 17:50:15 -0500</pubDate><guid>tag:rhysyngsun.com,2014-03-06:connascence-in-requirejs.html</guid><category>Javascript</category><category>RequireJS</category><category>Software Engineering</category></item><item><title>Grails - Using a specific version of LessCSS with lesscss-resources</title><link>http://rhysyngsun.com/grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html</link><description>&lt;p&gt;A few days ago I was trying to integrate the &lt;a href="http://grails.org/plugin/twitter-bootstrap"&gt;twitter-bootstrap&lt;/a&gt; Grails plugin into an app but was
+    having difficulty getting the less sources to play nice with the &lt;a href="http://grails.org/plugin/lesscss-resources"&gt;lesscss-resources&lt;/a&gt; plugin.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/paulfairless/grails-lesscss-resources/issues/45"&gt;It turned out&lt;/a&gt; that the most recent
+    version of bootstrap used LessCSS syntax that is only available in the 1.3.3 version of the lesscss compiler. The
+    lesscss-resources depends on version 1.3.1, so to work around that issue you can update your BuildConfig.groovy settings to the following to force a specific version of the lesscss compiler:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;grails&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;project&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;dependency&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;resolution&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;dependencies&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;runtime&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;org.lesscss:lesscss:1.3.3&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;plugins&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;:lesscss-resources:1.3.1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;excludes&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;lesscss&amp;quot;&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Mon, 11 Mar 2013 09:30:00 -0400</pubDate><guid>tag:rhysyngsun.com,2013-03-11:grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html</guid><category>Grails</category><category>Grails Plugin</category><category>Less</category></item><item><title>Mozilla Dev Derby July</title><link>http://rhysyngsun.com/mozilla-dev-derby-july.html</link><description>&lt;p&gt;I've spent some time this weekend working on an entry for &lt;a href="https://developer.mozilla.org/en-US/demos/devderby"&gt;Mozilla's Dev Derby&lt;/a&gt;. You can find my entry &lt;a href="https://developer.mozilla.org/en-US/demos/detail/antique-clock"&gt;hosted on the competition site&lt;/a&gt;. This is my first entry so please, go ahead and vote for it.&lt;/p&gt;
+&lt;p&gt;I also noted today before I submitted my entry that I'm not the only one who &lt;a href="https://developer.mozilla.org/en-US/demos/detail/counter-clock"&gt;thought to make a clock&lt;/a&gt;. It's interesting to see our our visuals, animations, and implementations differ.&lt;/p&gt;
+&lt;h4&gt;How I Did It&lt;/h4&gt;
+&lt;p&gt;I've this entry available as a &lt;a href="https://github.com/rhysyngsun/devderby-07-2012"&gt;GitHub repo&lt;/a&gt; so you can browse the source yourself.&lt;/p&gt;
+&lt;p&gt;I wanted this to be a relatively quick weekend project and fun to do. A requirement of the competition is for it to work across various browsers, so I started with &lt;a href="http://sass-lang.com/"&gt;Sass&lt;/a&gt; and &lt;a href="http://compass-style.org/"&gt;Compass&lt;/a&gt; to deal with generating a lot of the yuck that comes with browser specific code (particularly vendor-prefixed CSS). Sass was also very useful in generating the animations. Just compare the &lt;a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/a55 linesnimations.scss"&gt;Sass source&lt;/a&gt; (55 lines) and the &lt;a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/css/animations.css"&gt;generated CSS&lt;/a&gt; (1914 lines) to get an idea of how painful and impossible this would have been to do in a weekend.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="CSS3 Roman Numerals" src="http://rhysyngsun.com/images/07-2012/numerals.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Getting the hands of the clock was relatively straightforward. The difficult part was in positioning the Roman numerals. In order for those numerals to fit correctly in the ring around the edge, they had to be rotated individually around the center of the clock face. Additionally the overall set of numerals for a given hour had to be approximately centered on the radius line for that hour. The combination of those two pretty much ruled out positioning individual characters as a sane strategy.&lt;/p&gt;
+&lt;p&gt;Instead, I opted for grouping the numerals (wrapping in &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt; tags) in a parent &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; and rotating that &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; around the center. I then individually tweaked the characters by rotating them around the same point in smaller increments. I also created guides to help me align the numerals on the radius lines. You can see it commented out &lt;a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/styles.scss#L39"&gt;on line 39 here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All in all it took me about 8-10 hours over the weekend to create this. Most of that time was spent playing with css tranforms.&lt;/p&gt;
+&lt;p&gt;I'll definitely putting in an entry for August as that contest is &lt;a href="http://vsnap.com"&gt;near and dear to my heart&lt;/a&gt;. &lt;code&gt;&amp;lt;/shameless-plug&amp;gt;&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Sun, 29 Jul 2012 16:30:00 -0400</pubDate><guid>tag:rhysyngsun.com,2012-07-29:mozilla-dev-derby-july.html</guid><category>CSS3</category><category>Sass</category><category>Dev Derby</category></item><item><title>From Posterous to Jekyll and GitHub Pages</title><link>http://rhysyngsun.com/from-posterous-to-jekyll-and-github-pages.html</link><description>&lt;p&gt;This is my first time playing with building a Jekyll-based site for &lt;a href="http://pages.github.com"&gt;GitHub Pages&lt;/a&gt;. In the past I've used Wordpress and then Posterous, but with obvious recent events that wasn't going to be good for the long term. I honestly only ever wrote a single "First Post" on posterous, because I didn't have any personal investment in the site.&lt;/p&gt;
+&lt;p&gt;I had previously got sick of the maintenence around Wordpress (not to mention the PHP) and moved to Posterous for simplicity. I feel Jekyll/GHP balances my desire for simplicity with my need for control when I need it.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Fri, 06 Apr 2012 15:33:00 -0400</pubDate><guid>tag:rhysyngsun.com,2012-04-06:from-posterous-to-jekyll-and-github-pages.html</guid></item></channel></rss>

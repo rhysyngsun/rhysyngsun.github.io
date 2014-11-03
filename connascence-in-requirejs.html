@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
+	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+
+	<link href="http://rhysyngsun.com/" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog ATOM Feed" />
+
+		<title>Rhysyngsun's Blog</title>
+		<meta charset="utf-8" />
+</head>
+<body>
+	<section id="sidebar">
+		<figure id="user_logo">
+			<a href="/"><div class="logo">&nbsp;</div></a>
+		</figure>
+
+		<div class="user_meta">
+			<h1 id="user"><a href="/" class="">Nathan Levesque</a></h1>
+			<h2></h2>
+			<ul>
+					<li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
+			</ul>
+		</div>
+		<footer>
+			<address>
+				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
+				theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
+			</address>
+		</footer>
+	</section>
+
+	<section id="posts">
+	<header>
+		<h1>Nathan Levesque's blog</h1>
+		<h3>Posted Thu 06 March 2014</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://rhysyngsun.com/connascence-in-requirejs.html" rel="bookmark"
+				title="Permalink to Connascence in RequireJS">Connascence in RequireJS</a>
+		</h1>
+		<p>I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.</p>
+<p>We've all run across examples of complex code: a class with too many concerns, a function that's doing too many operations, or an abstraction in a place where it's unnecessary.</p>
+<p>A few days after his passing, I watched a video of <a href="http://en.wikipedia.org/wiki/Jim_Weirich">Jim Weirich</a> of Rake fame <a href="http://youtu.be/NLT7Qcn_PmI">giving a presentation</a> on the concept of <a href="http://en.wikipedia.org/wiki/Connascence_(computer_programming)">connascence</a>. I highly recommend you watch it if you're unfamiliar with the topic.</p>
+<p>This topic really hit on one of those things that I'd previously vaguely categorized as a "code smell." Code that's highly coupled makes for painful points when you have to change a behavior in the overall system. It's nice to have a quality metric for that now.</p>
+<p>A few days later it struck me that this concept explains very well why I've always had trouble with this style of <a href="http://requirejs.org/">RequireJS</a> (this example lifted from their docs <a href="http://requirejs.org/docs/api.html#defdep">here</a>:</p>
+<div class="highlight"><pre><span class="c1">//my/shirt.js now has some dependencies, a cart and inventory</span>
+<span class="c1">//module in the same directory as shirt.js</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">&quot;./cart&quot;</span><span class="p">,</span> <span class="s2">&quot;./inventory&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cart</span><span class="p">,</span> <span class="nx">inventory</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//return an object to define the &quot;my/shirt&quot; module.</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+        <span class="nx">addToCart</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">inventory</span><span class="p">.</span><span class="nx">decrement</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+            <span class="nx">cart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>In this example, there's an increasing Connascence of Order between the array of dependencies and the argument list as the number of dependencies for your module increase. Ideally, you should be keeping your dependency count as low as possible, but very often it slips over two or three, which is the point at which I'd say this type of connascence starts to become troublesome.</p>
+<p>I'm also one of those folks who is very anal with making sure dependencies/imports are logically ordered and (if necessary) logically grouped. That means I'm occasionally inserting a dependency into list, rather than appending it.</p>
+<p>Note that there's also a Connascence of Name between a dependency's name in the list and the filename of that module. There's no way to get away from that, but you can completely remove the Connascence of Order by changing to a CommonJS-ish style:</p>
+<div class="highlight"><pre><span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//my/shirt.js now has some dependencies, a cart and inventory</span>
+    <span class="c1">//module in the same directory as shirt.js</span>
+    <span class="kd">var</span> <span class="nx">cart</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./cart&quot;</span><span class="p">),</span>
+        <span class="nx">inventory</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./inventory&quot;</span><span class="p">);</span>
+
+    <span class="c1">//return an object to define the &quot;my/shirt&quot; module.</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+        <span class="nx">addToCart</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">inventory</span><span class="p">.</span><span class="nx">decrement</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+            <span class="nx">cart</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>The CommonJS style eliminates a whole class of programmer error. Sure you might have a few extra lines of code, but you've removed the need for the mental overhead of making sure the order is right in both places.</p>
+
+		<div id="article_meta">
+				Category:
+					<a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a>
+				<br />Tags:
+					<a href="http://rhysyngsun.com/tag/javascript.html">Javascript</a>
+					<a href="http://rhysyngsun.com/tag/requirejs.html">RequireJS</a>
+					<a href="http://rhysyngsun.com/tag/software-engineering.html">Software Engineering</a>
+		</div>
+	</article>
+
+	<footer>
+		<a href="http://rhysyngsun.com/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
+	</section>
+
+</body>
+</html>

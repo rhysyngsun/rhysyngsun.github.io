@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
+	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+
+	<link href="http://rhysyngsun.com/" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog ATOM Feed" />
+
+		<title>Rhysyngsun's Blog</title>
+		<meta charset="utf-8" />
+</head>
+<body>
+	<section id="sidebar">
+		<figure id="user_logo">
+			<a href="/"><div class="logo">&nbsp;</div></a>
+		</figure>
+
+		<div class="user_meta">
+			<h1 id="user"><a href="/" class="">Nathan Levesque</a></h1>
+			<h2></h2>
+			<ul>
+					<li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
+			</ul>
+		</div>
+		<footer>
+			<address>
+				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
+				theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
+			</address>
+		</footer>
+	</section>
+
+	<section id="posts">
+	<header>
+		<h1>Nathan Levesque's blog</h1>
+		<h3>Posted Sun 29 July 2012</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://rhysyngsun.com/mozilla-dev-derby-july.html" rel="bookmark"
+				title="Permalink to Mozilla Dev Derby July">Mozilla Dev Derby July</a>
+		</h1>
+		<p>I've spent some time this weekend working on an entry for <a href="https://developer.mozilla.org/en-US/demos/devderby">Mozilla's Dev Derby</a>. You can find my entry <a href="https://developer.mozilla.org/en-US/demos/detail/antique-clock">hosted on the competition site</a>. This is my first entry so please, go ahead and vote for it.</p>
+<p>I also noted today before I submitted my entry that I'm not the only one who <a href="https://developer.mozilla.org/en-US/demos/detail/counter-clock">thought to make a clock</a>. It's interesting to see our our visuals, animations, and implementations differ.</p>
+<h4>How I Did It</h4>
+<p>I've this entry available as a <a href="https://github.com/rhysyngsun/devderby-07-2012">GitHub repo</a> so you can browse the source yourself.</p>
+<p>I wanted this to be a relatively quick weekend project and fun to do. A requirement of the competition is for it to work across various browsers, so I started with <a href="http://sass-lang.com/">Sass</a> and <a href="http://compass-style.org/">Compass</a> to deal with generating a lot of the yuck that comes with browser specific code (particularly vendor-prefixed CSS). Sass was also very useful in generating the animations. Just compare the <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/a55 linesnimations.scss">Sass source</a> (55 lines) and the <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/css/animations.css">generated CSS</a> (1914 lines) to get an idea of how painful and impossible this would have been to do in a weekend.</p>
+<p><img alt="CSS3 Roman Numerals" src="http://rhysyngsun.com/images/07-2012/numerals.png" /></p>
+<p>Getting the hands of the clock was relatively straightforward. The difficult part was in positioning the Roman numerals. In order for those numerals to fit correctly in the ring around the edge, they had to be rotated individually around the center of the clock face. Additionally the overall set of numerals for a given hour had to be approximately centered on the radius line for that hour. The combination of those two pretty much ruled out positioning individual characters as a sane strategy.</p>
+<p>Instead, I opted for grouping the numerals (wrapping in <code>&lt;span&gt;</code> tags) in a parent <code>&lt;div&gt;</code> and rotating that <code>&lt;div&gt;</code> around the center. I then individually tweaked the characters by rotating them around the same point in smaller increments. I also created guides to help me align the numerals on the radius lines. You can see it commented out <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/styles.scss#L39">on line 39 here</a>.</p>
+<p>All in all it took me about 8-10 hours over the weekend to create this. Most of that time was spent playing with css tranforms.</p>
+<p>I'll definitely putting in an entry for August as that contest is <a href="http://vsnap.com">near and dear to my heart</a>. <code>&lt;/shameless-plug&gt;</code></p>
+
+		<div id="article_meta">
+				Category:
+					<a href="http://rhysyngsun.com/category/css.html">CSS</a>
+				<br />Tags:
+					<a href="http://rhysyngsun.com/tag/css3.html">CSS3</a>
+					<a href="http://rhysyngsun.com/tag/sass.html">Sass</a>
+					<a href="http://rhysyngsun.com/tag/dev-derby.html">Dev Derby</a>
+		</div>
+	</article>
+
+	<footer>
+		<a href="http://rhysyngsun.com/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
+	</section>
+
+</body>
+</html>
