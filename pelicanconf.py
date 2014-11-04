@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Nathan Levesque'
 SITENAME = u"Rhysyngsun's Blog"
-SITEURL = ''
+SITEURL = 'http://rhysyngsun.com'
 
 PATH = 'content'
 
@@ -20,7 +20,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 USE_FOLDER_AS_CATEGORY = False
 FILENAME_METADATA='(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'CNAME']
 
 # Blogroll
 LINKS = (('Twitter', 'https://twitter.com/rhysyngsun'),)
