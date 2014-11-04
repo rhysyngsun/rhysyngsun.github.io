@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="stylesheet" type="text/css" href="/theme/css/style.css">
-	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
-	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
-	<link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+  <head>
+        <meta charset="utf-8" />
+    <title>Connascence in RequireJS — Rhysyngsun's Blog</title>
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/main.css" />
+    <link rel="shortcut icon" type="text/css" href="http://rhysyngsun.com/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml"
+                           title="Rhysyngsun's Blog — Flux Atom"
+                           href="http://rhysyngsun.com/" />
+    <!--[if lte IE 8]><script src="http://rhysyngsun.com/theme/js/html5shiv.js"></script><![endif]-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
 
-	<link href="http://rhysyngsun.com/" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog ATOM Feed" />
+    <meta name="author"   content="Nathan Levesque" />
+    <meta name="keywords" content="Javascript, RequireJS, Software Engineering" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-head">
+        <h1>
+          <a href="http://rhysyngsun.com/index.html">Rhysyngsun's Blog</a>
+        </h1>
+      </header>
 
-		<title>Rhysyngsun's Blog</title>
-		<meta charset="utf-8" />
-</head>
-<body>
-	<section id="sidebar">
-		<figure id="user_logo">
-			<a href="/"><div class="logo">&nbsp;</div></a>
-		</figure>
-
-		<div class="user_meta">
-			<h1 id="user"><a href="/" class="">Nathan Levesque</a></h1>
-			<h2></h2>
-			<ul>
-					<li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
-			</ul>
-		</div>
-		<footer>
-			<address>
-				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
-				theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
-			</address>
-		</footer>
-	</section>
-
-	<section id="posts">
-	<header>
-		<h1>Nathan Levesque's blog</h1>
-		<h3>Posted Thu 06 March 2014</h3>
-	</header>
-	<article>
-		<h1 id="title">
-			<a href="http://rhysyngsun.com/connascence-in-requirejs.html" rel="bookmark"
-				title="Permalink to Connascence in RequireJS">Connascence in RequireJS</a>
-		</h1>
-		<p>I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.</p>
+      <div class="page-content">
+     <article class="post content">
+      <header class="post-header">
+        <time datetime="2014-03-06T17:50:15-05:00" pubdate="pubdate">
+          Thu 06 March 2014
+        </time>
+        <h1>
+          <a rel="bookmark"
+             href="http://rhysyngsun.com/connascence-in-requirejs.html"
+             title="Permanent Link «Connascence in RequireJS»">
+             Connascence in RequireJS
+          </a>
+        </h1>
+        <div class="meta">
+            Dans «<a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a>»
+            par <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a>
+        </div>
+      </header>
+      <div class="post-content">
+        <p>I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.</p>
 <p>We've all run across examples of complex code: a class with too many concerns, a function that's doing too many operations, or an abstraction in a place where it's unnecessary.</p>
 <p>A few days after his passing, I watched a video of <a href="http://en.wikipedia.org/wiki/Jim_Weirich">Jim Weirich</a> of Rake fame <a href="http://youtu.be/NLT7Qcn_PmI">giving a presentation</a> on the concept of <a href="http://en.wikipedia.org/wiki/Connascence_(computer_programming)">connascence</a>. I highly recommend you watch it if you're unfamiliar with the topic.</p>
 <p>This topic really hit on one of those things that I'd previously vaguely categorized as a "code smell." Code that's highly coupled makes for painful points when you have to change a behavior in the overall system. It's nice to have a quality metric for that now.</p>
@@ -87,23 +86,73 @@
 
 
 <p>The CommonJS style eliminates a whole class of programmer error. Sure you might have a few extra lines of code, but you've removed the need for the mental overhead of making sure the order is right in both places.</p>
+      </div>
+      <footer class="post-footer">
+        <div class="meta">
+            Posts in «<a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a>»
+            by <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a><br />
+            Tags:  #<a href="http://rhysyngsun.com/tag/javascript.html">Javascript</a> #<a href="http://rhysyngsun.com/tag/requirejs.html">RequireJS</a> #<a href="http://rhysyngsun.com/tag/software-engineering.html">Software Engineering</a>        </div>
+      </footer>
+    </article>
+      </div>
+    <aside class="page-sidebar">
+      <nav class="widget">
+      <h3>Site</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com">Home</a></li>
+          <li><a href="http://rhysyngsun.com/archives.html">Archives</a></li>
+          <li><a href="http://rhysyngsun.com/tags.html">Tags</a></li>
+        </ul>
+      </nav>
 
-		<div id="article_meta">
-				Category:
-					<a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a>
-				<br />Tags:
-					<a href="http://rhysyngsun.com/tag/javascript.html">Javascript</a>
-					<a href="http://rhysyngsun.com/tag/requirejs.html">RequireJS</a>
-					<a href="http://rhysyngsun.com/tag/software-engineering.html">Software Engineering</a>
-		</div>
-	</article>
 
-	<footer>
-		<a href="http://rhysyngsun.com/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
-	</footer>
-
-
-	</section>
-
-</body>
+<nav class="widget">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a></li>
+          <li><a href="http://rhysyngsun.com/category/css.html">CSS</a></li>
+          <li><a href="http://rhysyngsun.com/category/misc.html">misc</a></li>
+          <li><a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a></li>
+        </ul>
+</nav>
+<nav class="widget">
+  <h3>Social</h3>
+    <ul>
+      <li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
+      <li><a href="http://rhysyngsun.com/" rel="alternate">Flux Atom</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+   <h3>Languages</h3>
+   <ul>
+          <li><a href="http://rhysyngsun.com/en" rel="alternate">english</a></li>
+   </ul>   
+</nav>
+<nav class="widget">
+    <h3>Links</h3>
+    <ul>
+          <li><a href="https://github.com/rhysyngsun">Github</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+  <h3>Tags</h3>
+    <ul>
+        <li class="tag-4"><a href="/tag/CSS3.html">CSS3</a></li>
+        <li class="tag-4"><a href="/tag/Software Engineering.html">Software Engineering</a></li>
+        <li class="tag-4"><a href="/tag/Sass.html">Sass</a></li>
+        <li class="tag-4"><a href="/tag/Grails Plugin.html">Grails Plugin</a></li>
+        <li class="tag-4"><a href="/tag/Grails.html">Grails</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Integration.html">Continuous Integration</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Delivery.html">Continuous Delivery</a></li>
+        <li class="tag-4"><a href="/tag/RequireJS.html">RequireJS</a></li>
+        <li class="tag-4"><a href="/tag/Dev Derby.html">Dev Derby</a></li>
+        <li class="tag-4"><a href="/tag/Javascript.html">Javascript</a></li>
+        <li class="tag-4"><a href="/tag/Less.html">Less</a></li>
+    </ul>
+</nav>    </aside>
+      <footer class="page-footer">
+        <p> Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+      </footer>
+    </div>
+  </body>
 </html>

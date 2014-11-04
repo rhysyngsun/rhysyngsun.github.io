@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="stylesheet" type="text/css" href="/theme/css/style.css">
-	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
-	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
-	<link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+  <head>
+        <meta charset="utf-8" />
+    <title>Mozilla Dev Derby July — Rhysyngsun's Blog</title>
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/main.css" />
+    <link rel="shortcut icon" type="text/css" href="http://rhysyngsun.com/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml"
+                           title="Rhysyngsun's Blog — Flux Atom"
+                           href="http://rhysyngsun.com/" />
+    <!--[if lte IE 8]><script src="http://rhysyngsun.com/theme/js/html5shiv.js"></script><![endif]-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
 
-	<link href="http://rhysyngsun.com/" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog ATOM Feed" />
+    <meta name="author"   content="Nathan Levesque" />
+    <meta name="keywords" content="CSS3, Sass, Dev Derby" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-head">
+        <h1>
+          <a href="http://rhysyngsun.com/index.html">Rhysyngsun's Blog</a>
+        </h1>
+      </header>
 
-		<title>Rhysyngsun's Blog</title>
-		<meta charset="utf-8" />
-</head>
-<body>
-	<section id="sidebar">
-		<figure id="user_logo">
-			<a href="/"><div class="logo">&nbsp;</div></a>
-		</figure>
-
-		<div class="user_meta">
-			<h1 id="user"><a href="/" class="">Nathan Levesque</a></h1>
-			<h2></h2>
-			<ul>
-					<li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
-			</ul>
-		</div>
-		<footer>
-			<address>
-				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
-				theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
-			</address>
-		</footer>
-	</section>
-
-	<section id="posts">
-	<header>
-		<h1>Nathan Levesque's blog</h1>
-		<h3>Posted Sun 29 July 2012</h3>
-	</header>
-	<article>
-		<h1 id="title">
-			<a href="http://rhysyngsun.com/mozilla-dev-derby-july.html" rel="bookmark"
-				title="Permalink to Mozilla Dev Derby July">Mozilla Dev Derby July</a>
-		</h1>
-		<p>I've spent some time this weekend working on an entry for <a href="https://developer.mozilla.org/en-US/demos/devderby">Mozilla's Dev Derby</a>. You can find my entry <a href="https://developer.mozilla.org/en-US/demos/detail/antique-clock">hosted on the competition site</a>. This is my first entry so please, go ahead and vote for it.</p>
+      <div class="page-content">
+     <article class="post content">
+      <header class="post-header">
+        <time datetime="2012-07-29T16:30:00-04:00" pubdate="pubdate">
+          Sun 29 July 2012
+        </time>
+        <h1>
+          <a rel="bookmark"
+             href="http://rhysyngsun.com/mozilla-dev-derby-july.html"
+             title="Permanent Link «Mozilla Dev Derby July»">
+             Mozilla Dev Derby July
+          </a>
+        </h1>
+        <div class="meta">
+            Dans «<a href="http://rhysyngsun.com/category/css.html">CSS</a>»
+            par <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a>
+        </div>
+      </header>
+      <div class="post-content">
+        <p>I've spent some time this weekend working on an entry for <a href="https://developer.mozilla.org/en-US/demos/devderby">Mozilla's Dev Derby</a>. You can find my entry <a href="https://developer.mozilla.org/en-US/demos/detail/antique-clock">hosted on the competition site</a>. This is my first entry so please, go ahead and vote for it.</p>
 <p>I also noted today before I submitted my entry that I'm not the only one who <a href="https://developer.mozilla.org/en-US/demos/detail/counter-clock">thought to make a clock</a>. It's interesting to see our our visuals, animations, and implementations differ.</p>
 <h4>How I Did It</h4>
 <p>I've this entry available as a <a href="https://github.com/rhysyngsun/devderby-07-2012">GitHub repo</a> so you can browse the source yourself.</p>
@@ -53,23 +52,73 @@
 <p>Instead, I opted for grouping the numerals (wrapping in <code>&lt;span&gt;</code> tags) in a parent <code>&lt;div&gt;</code> and rotating that <code>&lt;div&gt;</code> around the center. I then individually tweaked the characters by rotating them around the same point in smaller increments. I also created guides to help me align the numerals on the radius lines. You can see it commented out <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/styles.scss#L39">on line 39 here</a>.</p>
 <p>All in all it took me about 8-10 hours over the weekend to create this. Most of that time was spent playing with css tranforms.</p>
 <p>I'll definitely putting in an entry for August as that contest is <a href="http://vsnap.com">near and dear to my heart</a>. <code>&lt;/shameless-plug&gt;</code></p>
+      </div>
+      <footer class="post-footer">
+        <div class="meta">
+            Posts in «<a href="http://rhysyngsun.com/category/css.html">CSS</a>»
+            by <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a><br />
+            Tags:  #<a href="http://rhysyngsun.com/tag/css3.html">CSS3</a> #<a href="http://rhysyngsun.com/tag/sass.html">Sass</a> #<a href="http://rhysyngsun.com/tag/dev-derby.html">Dev Derby</a>        </div>
+      </footer>
+    </article>
+      </div>
+    <aside class="page-sidebar">
+      <nav class="widget">
+      <h3>Site</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com">Home</a></li>
+          <li><a href="http://rhysyngsun.com/archives.html">Archives</a></li>
+          <li><a href="http://rhysyngsun.com/tags.html">Tags</a></li>
+        </ul>
+      </nav>
 
-		<div id="article_meta">
-				Category:
-					<a href="http://rhysyngsun.com/category/css.html">CSS</a>
-				<br />Tags:
-					<a href="http://rhysyngsun.com/tag/css3.html">CSS3</a>
-					<a href="http://rhysyngsun.com/tag/sass.html">Sass</a>
-					<a href="http://rhysyngsun.com/tag/dev-derby.html">Dev Derby</a>
-		</div>
-	</article>
 
-	<footer>
-		<a href="http://rhysyngsun.com/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
-	</footer>
-
-
-	</section>
-
-</body>
+<nav class="widget">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a></li>
+          <li><a href="http://rhysyngsun.com/category/css.html">CSS</a></li>
+          <li><a href="http://rhysyngsun.com/category/misc.html">misc</a></li>
+          <li><a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a></li>
+        </ul>
+</nav>
+<nav class="widget">
+  <h3>Social</h3>
+    <ul>
+      <li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
+      <li><a href="http://rhysyngsun.com/" rel="alternate">Flux Atom</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+   <h3>Languages</h3>
+   <ul>
+          <li><a href="http://rhysyngsun.com/en" rel="alternate">english</a></li>
+   </ul>   
+</nav>
+<nav class="widget">
+    <h3>Links</h3>
+    <ul>
+          <li><a href="https://github.com/rhysyngsun">Github</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+  <h3>Tags</h3>
+    <ul>
+        <li class="tag-4"><a href="/tag/CSS3.html">CSS3</a></li>
+        <li class="tag-4"><a href="/tag/Software Engineering.html">Software Engineering</a></li>
+        <li class="tag-4"><a href="/tag/Sass.html">Sass</a></li>
+        <li class="tag-4"><a href="/tag/Grails Plugin.html">Grails Plugin</a></li>
+        <li class="tag-4"><a href="/tag/Grails.html">Grails</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Integration.html">Continuous Integration</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Delivery.html">Continuous Delivery</a></li>
+        <li class="tag-4"><a href="/tag/RequireJS.html">RequireJS</a></li>
+        <li class="tag-4"><a href="/tag/Dev Derby.html">Dev Derby</a></li>
+        <li class="tag-4"><a href="/tag/Javascript.html">Javascript</a></li>
+        <li class="tag-4"><a href="/tag/Less.html">Less</a></li>
+    </ul>
+</nav>    </aside>
+      <footer class="page-footer">
+        <p> Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+      </footer>
+    </div>
+  </body>
 </html>

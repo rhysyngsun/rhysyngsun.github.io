@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="stylesheet" type="text/css" href="/theme/css/style.css">
-	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
-	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
-	<link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+  <head>
+        <meta charset="utf-8" />
+    <title>My Ideal Continuous Integration Server — Rhysyngsun's Blog</title>
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/main.css" />
+    <link rel="shortcut icon" type="text/css" href="http://rhysyngsun.com/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml"
+                           title="Rhysyngsun's Blog — Flux Atom"
+                           href="http://rhysyngsun.com/" />
+    <!--[if lte IE 8]><script src="http://rhysyngsun.com/theme/js/html5shiv.js"></script><![endif]-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
 
-	<link href="http://rhysyngsun.com/" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog ATOM Feed" />
+    <meta name="author"   content="Nathan Levesque" />
+    <meta name="keywords" content="Continuous Integration, Continuous Delivery" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-head">
+        <h1>
+          <a href="http://rhysyngsun.com/index.html">Rhysyngsun's Blog</a>
+        </h1>
+      </header>
 
-		<title>Rhysyngsun's Blog</title>
-		<meta charset="utf-8" />
-</head>
-<body>
-	<section id="sidebar">
-		<figure id="user_logo">
-			<a href="/"><div class="logo">&nbsp;</div></a>
-		</figure>
-
-		<div class="user_meta">
-			<h1 id="user"><a href="/" class="">Nathan Levesque</a></h1>
-			<h2></h2>
-			<ul>
-					<li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
-			</ul>
-		</div>
-		<footer>
-			<address>
-				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
-				theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
-			</address>
-		</footer>
-	</section>
-
-	<section id="posts">
-	<header>
-		<h1>Nathan Levesque's blog</h1>
-		<h3>Posted Tue 04 November 2014</h3>
-	</header>
-	<article>
-		<h1 id="title">
-			<a href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html" rel="bookmark"
-				title="Permalink to My Ideal Continuous Integration Server">My Ideal Continuous Integration Server</a>
-		</h1>
-		<p>I've spent the last week looking at various CI solutions. My main criteria were:</p>
+      <div class="page-content">
+     <article class="post content">
+      <header class="post-header">
+        <time datetime="2014-11-04T20:02:10-04:00" pubdate="pubdate">
+          Tue 04 November 2014
+        </time>
+        <h1>
+          <a rel="bookmark"
+             href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html"
+             title="Permanent Link «My Ideal Continuous Integration Server»">
+             My Ideal Continuous Integration Server
+          </a>
+        </h1>
+        <div class="meta">
+            Dans «<a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a>»
+            par <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a>
+        </div>
+      </header>
+      <div class="post-content">
+        <p>I've spent the last week looking at various CI solutions. My main criteria were:</p>
 <ul>
 <li>create a flexible <a href="http://martinfowler.com/bliki/ContinuousDelivery.html">Continuous Delivery</a> <a href="http://martinfowler.com/bliki/DeploymentPipeline.html">deployment pipeline</a></li>
 <li>ability to promote builds to various environments (QA, prod, etc)</li>
@@ -72,22 +71,73 @@ It does seem a <em>tad</em> more complicated than I need, but it's likely becaus
 <p>I've also got feeling that I should take a stab at my own solution (to be done on my own time, not my employer's).
 There's a lot to still be done in this space and I have a gut feeling that it needs a fresh approach that incorporates all these learnings.
 The fresh start is needed because an ideal solution for CI needs back pressure against complexity.</p>
+      </div>
+      <footer class="post-footer">
+        <div class="meta">
+            Posts in «<a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a>»
+            by <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a><br />
+            Tags:  #<a href="http://rhysyngsun.com/tag/continuous-integration.html">Continuous Integration</a> #<a href="http://rhysyngsun.com/tag/continuous-delivery.html">Continuous Delivery</a>        </div>
+      </footer>
+    </article>
+      </div>
+    <aside class="page-sidebar">
+      <nav class="widget">
+      <h3>Site</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com">Home</a></li>
+          <li><a href="http://rhysyngsun.com/archives.html">Archives</a></li>
+          <li><a href="http://rhysyngsun.com/tags.html">Tags</a></li>
+        </ul>
+      </nav>
 
-		<div id="article_meta">
-				Category:
-					<a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a>
-				<br />Tags:
-					<a href="http://rhysyngsun.com/tag/continuous-integration.html">Continuous Integration</a>
-					<a href="http://rhysyngsun.com/tag/continuous-delivery.html">Continuous Delivery</a>
-		</div>
-	</article>
 
-	<footer>
-		<a href="http://rhysyngsun.com/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
-	</footer>
-
-
-	</section>
-
-</body>
+<nav class="widget">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a></li>
+          <li><a href="http://rhysyngsun.com/category/css.html">CSS</a></li>
+          <li><a href="http://rhysyngsun.com/category/misc.html">misc</a></li>
+          <li><a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a></li>
+        </ul>
+</nav>
+<nav class="widget">
+  <h3>Social</h3>
+    <ul>
+      <li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
+      <li><a href="http://rhysyngsun.com/" rel="alternate">Flux Atom</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+   <h3>Languages</h3>
+   <ul>
+          <li><a href="http://rhysyngsun.com/en" rel="alternate">english</a></li>
+   </ul>   
+</nav>
+<nav class="widget">
+    <h3>Links</h3>
+    <ul>
+          <li><a href="https://github.com/rhysyngsun">Github</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+  <h3>Tags</h3>
+    <ul>
+        <li class="tag-4"><a href="/tag/CSS3.html">CSS3</a></li>
+        <li class="tag-4"><a href="/tag/Software Engineering.html">Software Engineering</a></li>
+        <li class="tag-4"><a href="/tag/Sass.html">Sass</a></li>
+        <li class="tag-4"><a href="/tag/Grails Plugin.html">Grails Plugin</a></li>
+        <li class="tag-4"><a href="/tag/Grails.html">Grails</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Integration.html">Continuous Integration</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Delivery.html">Continuous Delivery</a></li>
+        <li class="tag-4"><a href="/tag/RequireJS.html">RequireJS</a></li>
+        <li class="tag-4"><a href="/tag/Dev Derby.html">Dev Derby</a></li>
+        <li class="tag-4"><a href="/tag/Javascript.html">Javascript</a></li>
+        <li class="tag-4"><a href="/tag/Less.html">Less</a></li>
+    </ul>
+</nav>    </aside>
+      <footer class="page-footer">
+        <p> Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+      </footer>
+    </div>
+  </body>
 </html>
