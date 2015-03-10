@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8" />
+    <title>Thoughts on CloudFormation — Rhysyngsun's Blog</title>
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/main.css" />
+    <link rel="shortcut icon" type="text/css" href="http://rhysyngsun.com/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml"
+                           title="Rhysyngsun's Blog — Flux Atom"
+                           href="http://rhysyngsun.com/" />
+    <!--[if lte IE 8]><script src="http://rhysyngsun.com/theme/js/html5shiv.js"></script><![endif]-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
+
+    <meta name="author"   content="Nathan Levesque" />
+    <meta name="keywords" content="AWS, CloudFormation, Deployment" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-head">
+        <h1>
+          <a href="http://rhysyngsun.com/index.html">Rhysyngsun's Blog</a>
+        </h1>
+      </header>
+
+      <div class="page-content">
+     <article class="post content">
+      <header class="post-header">
+        <time datetime="2015-03-10T08:10:10-04:00" pubdate="pubdate">
+          Tue 10 March 2015
+        </time>
+        <h1>
+          <a rel="bookmark"
+             href="http://rhysyngsun.com/thoughts-on-cloudformation.html"
+             title="Permanent Link «Thoughts on CloudFormation»">
+             Thoughts on CloudFormation
+          </a>
+        </h1>
+        <div class="meta">
+            Dans «<a href="http://rhysyngsun.com/category/aws.html">AWS</a>»
+            par <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a>
+        </div>
+      </header>
+      <div class="post-content">
+        <p>I've spent the last 10 months working with AWS' CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup.</p>
+<h4>Pros</h4>
+<p>CloudFormation is great if you don't want to deal with the orchestration of your deployments. It runs over your configuration files and figures out what the delta changes are, applies them taking dependencies into account, and will also rollback if a failure occurs.</p>
+<p>Overall, CloudFormation works well for offloading the execution of deployments.</p>
+<h4>Cons</h4>
+<p>There are a few places where CloudFormation begins to fall short for me.</p>
+<p>The first is complexity. I'm not saying the service can't handle the complexity, but humans can't handle the complexity of the JSON that CloudFormation uses for configuration. Even a moderately complex environment can begin to clock in at thousands of lines of JSON. At that point, it starts to feel like the XML days of yore.</p>
+<p>That means you have to lean on a tool like <a href="https://github.com/cloudtools/troposphere">troposphere</a> can do some heavy lifting. Troposphere is a great library and I would not even try to approach CloudFormation without it or something equivalent.</p>
+<p>The second downside is when your stacks fail to rollback. This happens most often when you're making a complicated change (e.g. refactoring nested CloudFormation templates) and the only way to get resolution on it is to contact AWS support. Support on the forums is slow and you're not always guaranteed to get attention either so if you end up using CloudFormation you better have <a href="https://aws.amazon.com/premiumsupport/">premium support</a>. Your best bet is to makes a series of smaller, incremental changes, rather than sweeping refactoring.</p>
+<p>The third downside is that you're limited to 20 stacks per region by default. You can request an increase to this limit, but there's always a limit. Limits like this are in place so that AWS can ensure a performant service for all their customers. This ends up steering you towards monolithic stacks, which can be even more painful. This also makes it much more difficult to run an arbitrary number of ad-hoc production-like environments for your developers.</p>
+<h4>Alternatives</h4>
+<h5>Roll Your Own with Boto</h5>
+<p>If you're using Python to generate CloudFormation configuration, it's not a huge leap to just use <a href="http://boto.readthedocs.org/">boto</a> directly. The <a href="http://aws.amazon.com/cli/">AWS CLI</a> runs on boto so the one thing you can count on is really solid service coverage. Boto will give you much more control and a better ability to recover from failed deployments, whereas a failure in CloudFormation (failed rollbacks are notoriously painful and always require intervention of AWS support to resolve) can possibly hold your service hostage while you engage AWS support to fix the failed stack. You'll have to handle rollback yourself, but you have much control over how exactly that works.</p>
+<h5>Terraform</h5>
+<p>Hashicorp's <a href="https://www.terraform.io/">Terraform</a> is one project to keep an eye on. The main roadblock to adoption for me would be the limited scope of <a href="https://github.com/hashicorp/terraform/issues/28">AWS coverage</a>. It's a pretty cool tool so far though and once it achieves a higher coverage of AWS services it will probably be my go-to tool.</p>
+<h3>Final Thoughts</h3>
+<p>CloudFormation can really help you get going on AWS if you don't want to deal with some of the deployment logistics, but the complexity of configuring it will quickly catch up with you for non-trivial deployments. AWS is continuing to improve the service though so some of the pitfalls I point out here may improve of time (particularly the rollback failures as I know it's a sore point).</p>
+      </div>
+      <footer class="post-footer">
+        <div class="meta">
+            Posts in «<a href="http://rhysyngsun.com/category/aws.html">AWS</a>»
+            by <a href="http://rhysyngsun.com/author/nathan-levesque.html">Nathan Levesque</a><br />
+            Tags:  #<a href="http://rhysyngsun.com/tag/aws.html">AWS</a> #<a href="http://rhysyngsun.com/tag/cloudformation.html">CloudFormation</a> #<a href="http://rhysyngsun.com/tag/deployment.html">Deployment</a>        </div>
+      </footer>
+    </article>
+      </div>
+    <aside class="page-sidebar">
+      <nav class="widget">
+      <h3>Site</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com">Home</a></li>
+          <li><a href="http://rhysyngsun.com/archives.html">Archives</a></li>
+          <li><a href="http://rhysyngsun.com/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+
+
+<nav class="widget">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="http://rhysyngsun.com/category/aws.html">AWS</a></li>
+          <li><a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a></li>
+          <li><a href="http://rhysyngsun.com/category/css.html">CSS</a></li>
+          <li><a href="http://rhysyngsun.com/category/misc.html">misc</a></li>
+          <li><a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a></li>
+        </ul>
+</nav>
+<nav class="widget">
+  <h3>Social</h3>
+    <ul>
+      <li><a href="https://twitter.com/rhysyngsun">Twitter</a></li>
+      <li><a href="http://rhysyngsun.com/" rel="alternate">Flux Atom</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+   <h3>Languages</h3>
+   <ul>
+          <li><a href="http://rhysyngsun.com/en" rel="alternate">english</a></li>
+   </ul>   
+</nav>
+<nav class="widget">
+    <h3>Links</h3>
+    <ul>
+          <li><a href="https://github.com/rhysyngsun">Github</a></li>
+    </ul>
+</nav>
+<nav class="widget">
+  <h3>Tags</h3>
+    <ul>
+        <li class="tag-4"><a href="/tag/Continuous Integration.html">Continuous Integration</a></li>
+        <li class="tag-4"><a href="/tag/Sass.html">Sass</a></li>
+        <li class="tag-4"><a href="/tag/Deployment.html">Deployment</a></li>
+        <li class="tag-4"><a href="/tag/Continuous Delivery.html">Continuous Delivery</a></li>
+        <li class="tag-4"><a href="/tag/AWS.html">AWS</a></li>
+        <li class="tag-4"><a href="/tag/Less.html">Less</a></li>
+        <li class="tag-4"><a href="/tag/Grails Plugin.html">Grails Plugin</a></li>
+        <li class="tag-4"><a href="/tag/Javascript.html">Javascript</a></li>
+        <li class="tag-4"><a href="/tag/Grails.html">Grails</a></li>
+        <li class="tag-4"><a href="/tag/RequireJS.html">RequireJS</a></li>
+        <li class="tag-4"><a href="/tag/CSS3.html">CSS3</a></li>
+        <li class="tag-4"><a href="/tag/Software Engineering.html">Software Engineering</a></li>
+        <li class="tag-4"><a href="/tag/Dev Derby.html">Dev Derby</a></li>
+        <li class="tag-4"><a href="/tag/CloudFormation.html">CloudFormation</a></li>
+    </ul>
+</nav>    </aside>
+      <footer class="page-footer">
+        <p> Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
