@@ -1,5 +1,6 @@
 Title: Grails - Using a specific version of LessCSS with lesscss-resources
 Date: 2013-03-11 09:30:00 -0400
+Category: JVM
 Tags: Grails, Grails Plugin, Less
 
 A few days ago I was trying to integrate the [twitter-bootstrap](http://grails.org/plugin/twitter-bootstrap) Grails plugin into an app but was

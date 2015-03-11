@@ -5,13 +5,13 @@ Tags: AWS, CloudFormation, Deployment
 
 I've spent the last 10 months working with AWS' CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup.
 
-#### Pros
+## Pros
 
 CloudFormation is great if you don't want to deal with the orchestration of your deployments. It runs over your configuration files and figures out what the delta changes are, applies them taking dependencies into account, and will also rollback if a failure occurs.
 
 Overall, CloudFormation works well for offloading the execution of deployments.
 
-#### Cons
+## Cons
 
 There are a few places where CloudFormation begins to fall short for me.
 
@@ -23,16 +23,16 @@ The second downside is when your stacks fail to rollback. This happens most ofte
 
 The third downside is that you're limited to 20 stacks per region by default. You can request an increase to this limit, but there's always a limit. Limits like this are in place so that AWS can ensure a performant service for all their customers. This ends up steering you towards monolithic stacks, which can be even more painful. This also makes it much more difficult to run an arbitrary number of ad-hoc production-like environments for your developers.
 
-#### Alternatives
+## Alternatives
 
-##### Roll Your Own with Boto
+#### Roll Your Own with Boto
 
 If you're using Python to generate CloudFormation configuration, it's not a huge leap to just use [boto](http://boto.readthedocs.org/) directly. The [AWS CLI](http://aws.amazon.com/cli/) runs on boto so the one thing you can count on is really solid service coverage. Boto will give you much more control and a better ability to recover from failed deployments, whereas a failure in CloudFormation (failed rollbacks are notoriously painful and always require intervention of AWS support to resolve) can possibly hold your service hostage while you engage AWS support to fix the failed stack. You'll have to handle rollback yourself, but you have much control over how exactly that works.
 
-##### Terraform
+#### Terraform
 
 Hashicorp's [Terraform](https://www.terraform.io/) is one project to keep an eye on. The main roadblock to adoption for me would be the limited scope of [AWS coverage](https://github.com/hashicorp/terraform/issues/28). It's a pretty cool tool so far though and once it achieves a higher coverage of AWS services it will probably be my go-to tool.
 
-### Final Thoughts
+## Final Thoughts
 
 CloudFormation can really help you get going on AWS if you don't want to deal with some of the deployment logistics, but the complexity of configuring it will quickly catch up with you for non-trivial deployments. AWS is continuing to improve the service though so some of the pitfalls I point out here may improve of time (particularly the rollback failures as I know it's a sore point).
