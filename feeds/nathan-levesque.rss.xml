@@ -1,20 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhysyngsun's Blog</title><link>http://rhysyngsun.com/</link><description></description><atom:link href="http://rhysyngsun.com/feeds/nathan-levesque.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 10 Mar 2015 08:10:10 -0400</lastBuildDate><item><title>Thoughts on CloudFormation</title><link>http://rhysyngsun.com/thoughts-on-cloudformation.html</link><description>&lt;p&gt;I've spent the last 10 months working with AWS' CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup.&lt;/p&gt;
-&lt;h4&gt;Pros&lt;/h4&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhysyngsun's Blog</title><link>http://rhysyngsun.com/</link><description></description><atom:link href="http://rhysyngsun.com/feeds/nathan-levesque.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 11 Mar 2015 07:44:00 -0400</lastBuildDate><item><title>Slightly Less Worse Ways</title><link>http://rhysyngsun.com/slightly-less-worse-ways.html</link><description>&lt;p&gt;When I attended college I observed some people around me that
+became satisfied with their status quo. They felt they had learned enough
+and that was the enough for them. They felt they knew everything they needed to know.
+Maybe that was hubris, maybe it was laziness, I'm not quite sure.
+The word I used was stagnation.&lt;/p&gt;
+&lt;p&gt;I knew I wanted to avoid at all costs. This has stuck with me to this day, but
+I've continued to evolve it by adding on little mental hacks and mantras as I went.
+I try to do what I can to keep hubris at bay because I've found it to be one of the
+warning signs of heading down an ill-fated path.&lt;/p&gt;
+&lt;p&gt;One of the things that's befuddled me in recent years is the concept of things that
+are the "best" or variations therof. In the software world one of the most common
+bests are Best Practices and I've seen a lot of them come and go.
+They're the best...for a while...then they're gone. Maybe we should call the
+"Best for Now Practices," but it's not as catchy.&lt;/p&gt;
+&lt;p&gt;I have a strong belief that "best practices" in the absolute sense will always be
+elusive. Mostly because of the human factor. There's always going to be something we
+don't understand fully, something we misunderstand, or something we just plain did wrong.&lt;/p&gt;
+&lt;p&gt;That leads we to that saying that I've crafted over the last few years that flips traditional thinking on its head:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot;I&amp;#39;ve only found a slightly less worse way of doing things.&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, that's doesn't mean I think everything I do is absolute garbage. In fact, I'm
+very proud of all the work I've done having not been traditionally educated in computer science.
+I say that because it forces you to assume a certain measure of fallibility in yourself.
+I've found that thinking you're infallible is the express bus to screwing up. You're no longer willing to
+look for mistakes in what you do and nature will step in and remind you that you're
+human (or at least it'll give it the old college try).&lt;/p&gt;
+&lt;p&gt;It also means you constantly strive for improvement because you're always striving for
+better. You seek it out not because you're fed up with something, but because you know
+it's out there and you want it because it makes you better.&lt;/p&gt;
+&lt;p&gt;Another gain from this is that every mistake is an opportunity for improvement. I'm a big
+proponent of learning from your mistakes and making sure you have the opportunity to
+make those mistakes in a safe environment (by safe, I don't just mean free from harm to
+others but also free from shaming those who screw up).&lt;/p&gt;
+&lt;p&gt;Lastly, it's an acknowledgement of entropy in our lives. Things break down. What used
+to work doesn't work anymore or at least not as well. Knowledge becomes outdated and
+needs refreshing. You need refreshing.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Wed, 11 Mar 2015 07:44:00 -0400</pubDate><guid>tag:rhysyngsun.com,2015-03-11:slightly-less-worse-ways.html</guid><category>Software</category><category>Development</category><category>Mindset</category></item><item><title>Thoughts on CloudFormation</title><link>http://rhysyngsun.com/thoughts-on-cloudformation.html</link><description>&lt;p&gt;I've spent the last 10 months working with AWS' CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup.&lt;/p&gt;
+&lt;h2&gt;Pros&lt;/h2&gt;
 &lt;p&gt;CloudFormation is great if you don't want to deal with the orchestration of your deployments. It runs over your configuration files and figures out what the delta changes are, applies them taking dependencies into account, and will also rollback if a failure occurs.&lt;/p&gt;
 &lt;p&gt;Overall, CloudFormation works well for offloading the execution of deployments.&lt;/p&gt;
-&lt;h4&gt;Cons&lt;/h4&gt;
+&lt;h2&gt;Cons&lt;/h2&gt;
 &lt;p&gt;There are a few places where CloudFormation begins to fall short for me.&lt;/p&gt;
 &lt;p&gt;The first is complexity. I'm not saying the service can't handle the complexity, but humans can't handle the complexity of the JSON that CloudFormation uses for configuration. Even a moderately complex environment can begin to clock in at thousands of lines of JSON. At that point, it starts to feel like the XML days of yore.&lt;/p&gt;
 &lt;p&gt;That means you have to lean on a tool like &lt;a href="https://github.com/cloudtools/troposphere"&gt;troposphere&lt;/a&gt; can do some heavy lifting. Troposphere is a great library and I would not even try to approach CloudFormation without it or something equivalent.&lt;/p&gt;
 &lt;p&gt;The second downside is when your stacks fail to rollback. This happens most often when you're making a complicated change (e.g. refactoring nested CloudFormation templates) and the only way to get resolution on it is to contact AWS support. Support on the forums is slow and you're not always guaranteed to get attention either so if you end up using CloudFormation you better have &lt;a href="https://aws.amazon.com/premiumsupport/"&gt;premium support&lt;/a&gt;. Your best bet is to makes a series of smaller, incremental changes, rather than sweeping refactoring.&lt;/p&gt;
 &lt;p&gt;The third downside is that you're limited to 20 stacks per region by default. You can request an increase to this limit, but there's always a limit. Limits like this are in place so that AWS can ensure a performant service for all their customers. This ends up steering you towards monolithic stacks, which can be even more painful. This also makes it much more difficult to run an arbitrary number of ad-hoc production-like environments for your developers.&lt;/p&gt;
-&lt;h4&gt;Alternatives&lt;/h4&gt;
-&lt;h5&gt;Roll Your Own with Boto&lt;/h5&gt;
+&lt;h2&gt;Alternatives&lt;/h2&gt;
+&lt;h4&gt;Roll Your Own with Boto&lt;/h4&gt;
 &lt;p&gt;If you're using Python to generate CloudFormation configuration, it's not a huge leap to just use &lt;a href="http://boto.readthedocs.org/"&gt;boto&lt;/a&gt; directly. The &lt;a href="http://aws.amazon.com/cli/"&gt;AWS CLI&lt;/a&gt; runs on boto so the one thing you can count on is really solid service coverage. Boto will give you much more control and a better ability to recover from failed deployments, whereas a failure in CloudFormation (failed rollbacks are notoriously painful and always require intervention of AWS support to resolve) can possibly hold your service hostage while you engage AWS support to fix the failed stack. You'll have to handle rollback yourself, but you have much control over how exactly that works.&lt;/p&gt;
-&lt;h5&gt;Terraform&lt;/h5&gt;
+&lt;h4&gt;Terraform&lt;/h4&gt;
 &lt;p&gt;Hashicorp's &lt;a href="https://www.terraform.io/"&gt;Terraform&lt;/a&gt; is one project to keep an eye on. The main roadblock to adoption for me would be the limited scope of &lt;a href="https://github.com/hashicorp/terraform/issues/28"&gt;AWS coverage&lt;/a&gt;. It's a pretty cool tool so far though and once it achieves a higher coverage of AWS services it will probably be my go-to tool.&lt;/p&gt;
-&lt;h3&gt;Final Thoughts&lt;/h3&gt;
+&lt;h2&gt;Final Thoughts&lt;/h2&gt;
 &lt;p&gt;CloudFormation can really help you get going on AWS if you don't want to deal with some of the deployment logistics, but the complexity of configuring it will quickly catch up with you for non-trivial deployments. AWS is continuing to improve the service though so some of the pitfalls I point out here may improve of time (particularly the rollback failures as I know it's a sore point).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathan Levesque</dc:creator><pubDate>Tue, 10 Mar 2015 08:10:10 -0400</pubDate><guid>tag:rhysyngsun.com,2015-03-10:thoughts-on-cloudformation.html</guid><category>AWS</category><category>CloudFormation</category><category>Deployment</category></item><item><title>My Ideal Continuous Integration Server</title><link>http://rhysyngsun.com/my-ideal-continuous-integration-server.html</link><description>&lt;p&gt;I've spent the last week looking at various CI solutions. My main criteria were:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;create a flexible &lt;a href="http://martinfowler.com/bliki/ContinuousDelivery.html"&gt;Continuous Delivery&lt;/a&gt; &lt;a href="http://martinfowler.com/bliki/DeploymentPipeline.html"&gt;deployment pipeline&lt;/a&gt;&lt;/li&gt;

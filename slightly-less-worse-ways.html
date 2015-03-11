@@ -10,18 +10,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="AWS, CloudFormation, Deployment, AWS, " />
+<meta name="keywords" content="Software, Development, Mindset, Software, " />
 
-<meta property="og:title" content="Thoughts on CloudFormation "/>
-<meta property="og:url" content="http://rhysyngsun.com/thoughts-on-cloudformation.html" />
-<meta property="og:description" content="I&#39;ve spent the last 10 months working with AWS&#39; CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup. Pros CloudFormation is great if you don&#39;t want to deal with the orchestration of ..." />
+<meta property="og:title" content="Slightly Less Worse Ways "/>
+<meta property="og:url" content="http://rhysyngsun.com/slightly-less-worse-ways.html" />
+<meta property="og:description" content="When I attended college I observed some people around me that became satisfied with their status quo. They felt they had learned enough and that was the enough for them. They felt they knew everything they needed to know. Maybe that was hubris, maybe it was laziness, I&#39;m not ..." />
 <meta property="og:site_name" content="Rhysyngsun&#39;s Blog" />
 <meta property="og:article:author" content="Nathan Levesque" />
-<meta property="og:article:published_time" content="2015-03-10T08:10:10-04:00" />
-<meta name="twitter:title" content="Thoughts on CloudFormation ">
-<meta name="twitter:description" content="I&#39;ve spent the last 10 months working with AWS&#39; CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup. Pros CloudFormation is great if you don&#39;t want to deal with the orchestration of ...">
+<meta property="og:article:published_time" content="2015-03-11T07:44:00-04:00" />
+<meta name="twitter:title" content="Slightly Less Worse Ways ">
+<meta name="twitter:description" content="When I attended college I observed some people around me that became satisfied with their status quo. They felt they had learned enough and that was the enough for them. They felt they knew everything they needed to know. Maybe that was hubris, maybe it was laziness, I&#39;m not ...">
 
-        <title>Thoughts on CloudFormation  · Rhysyngsun&#39;s Blog
+        <title>Slightly Less Worse Ways  · Rhysyngsun&#39;s Blog
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -69,7 +69,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://rhysyngsun.com/thoughts-on-cloudformation.html"> Thoughts on CloudFormation  </a></h1>
+    <h1><a href="http://rhysyngsun.com/slightly-less-worse-ways.html"> Slightly Less Worse Ways  </a></h1>
     </header>
 </div>
 
@@ -77,30 +77,51 @@
         <div class="span8 offset2 article-content">
 
             
-            <p>I've spent the last 10 months working with AWS' CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup.</p>
-<h2>Pros</h2>
-<p>CloudFormation is great if you don't want to deal with the orchestration of your deployments. It runs over your configuration files and figures out what the delta changes are, applies them taking dependencies into account, and will also rollback if a failure occurs.</p>
-<p>Overall, CloudFormation works well for offloading the execution of deployments.</p>
-<h2>Cons</h2>
-<p>There are a few places where CloudFormation begins to fall short for me.</p>
-<p>The first is complexity. I'm not saying the service can't handle the complexity, but humans can't handle the complexity of the JSON that CloudFormation uses for configuration. Even a moderately complex environment can begin to clock in at thousands of lines of JSON. At that point, it starts to feel like the XML days of yore.</p>
-<p>That means you have to lean on a tool like <a href="https://github.com/cloudtools/troposphere">troposphere</a> can do some heavy lifting. Troposphere is a great library and I would not even try to approach CloudFormation without it or something equivalent.</p>
-<p>The second downside is when your stacks fail to rollback. This happens most often when you're making a complicated change (e.g. refactoring nested CloudFormation templates) and the only way to get resolution on it is to contact AWS support. Support on the forums is slow and you're not always guaranteed to get attention either so if you end up using CloudFormation you better have <a href="https://aws.amazon.com/premiumsupport/">premium support</a>. Your best bet is to makes a series of smaller, incremental changes, rather than sweeping refactoring.</p>
-<p>The third downside is that you're limited to 20 stacks per region by default. You can request an increase to this limit, but there's always a limit. Limits like this are in place so that AWS can ensure a performant service for all their customers. This ends up steering you towards monolithic stacks, which can be even more painful. This also makes it much more difficult to run an arbitrary number of ad-hoc production-like environments for your developers.</p>
-<h2>Alternatives</h2>
-<h4>Roll Your Own with Boto</h4>
-<p>If you're using Python to generate CloudFormation configuration, it's not a huge leap to just use <a href="http://boto.readthedocs.org/">boto</a> directly. The <a href="http://aws.amazon.com/cli/">AWS CLI</a> runs on boto so the one thing you can count on is really solid service coverage. Boto will give you much more control and a better ability to recover from failed deployments, whereas a failure in CloudFormation (failed rollbacks are notoriously painful and always require intervention of AWS support to resolve) can possibly hold your service hostage while you engage AWS support to fix the failed stack. You'll have to handle rollback yourself, but you have much control over how exactly that works.</p>
-<h4>Terraform</h4>
-<p>Hashicorp's <a href="https://www.terraform.io/">Terraform</a> is one project to keep an eye on. The main roadblock to adoption for me would be the limited scope of <a href="https://github.com/hashicorp/terraform/issues/28">AWS coverage</a>. It's a pretty cool tool so far though and once it achieves a higher coverage of AWS services it will probably be my go-to tool.</p>
-<h2>Final Thoughts</h2>
-<p>CloudFormation can really help you get going on AWS if you don't want to deal with some of the deployment logistics, but the complexity of configuring it will quickly catch up with you for non-trivial deployments. AWS is continuing to improve the service though so some of the pitfalls I point out here may improve of time (particularly the rollback failures as I know it's a sore point).</p>
+            <p>When I attended college I observed some people around me that
+became satisfied with their status quo. They felt they had learned enough
+and that was the enough for them. They felt they knew everything they needed to know.
+Maybe that was hubris, maybe it was laziness, I'm not quite sure.
+The word I used was stagnation.</p>
+<p>I knew I wanted to avoid at all costs. This has stuck with me to this day, but
+I've continued to evolve it by adding on little mental hacks and mantras as I went.
+I try to do what I can to keep hubris at bay because I've found it to be one of the
+warning signs of heading down an ill-fated path.</p>
+<p>One of the things that's befuddled me in recent years is the concept of things that
+are the "best" or variations therof. In the software world one of the most common
+bests are Best Practices and I've seen a lot of them come and go.
+They're the best...for a while...then they're gone. Maybe we should call the
+"Best for Now Practices," but it's not as catchy.</p>
+<p>I have a strong belief that "best practices" in the absolute sense will always be
+elusive. Mostly because of the human factor. There's always going to be something we
+don't understand fully, something we misunderstand, or something we just plain did wrong.</p>
+<p>That leads we to that saying that I've crafted over the last few years that flips traditional thinking on its head:</p>
+<div class="highlight"><pre>&quot;I&#39;ve only found a slightly less worse way of doing things.&quot;
+</pre></div>
+
+
+<p>Now, that's doesn't mean I think everything I do is absolute garbage. In fact, I'm
+very proud of all the work I've done having not been traditionally educated in computer science.
+I say that because it forces you to assume a certain measure of fallibility in yourself.
+I've found that thinking you're infallible is the express bus to screwing up. You're no longer willing to
+look for mistakes in what you do and nature will step in and remind you that you're
+human (or at least it'll give it the old college try).</p>
+<p>It also means you constantly strive for improvement because you're always striving for
+better. You seek it out not because you're fed up with something, but because you know
+it's out there and you want it because it makes you better.</p>
+<p>Another gain from this is that every mistake is an opportunity for improvement. I'm a big
+proponent of learning from your mistakes and making sure you have the opportunity to
+make those mistakes in a safe environment (by safe, I don't just mean free from harm to
+others but also free from shaming those who screw up).</p>
+<p>Lastly, it's an acknowledgement of entropy in our lives. Things break down. What used
+to work doesn't work anymore or at least not as well. Knowledge becomes outdated and
+needs refreshing. You need refreshing.</p>
             
             <section>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://rhysyngsun.com/thoughts-on-cloudformation.html#disqus_thread">
+                href="http://rhysyngsun.com/slightly-less-worse-ways.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -110,8 +131,8 @@
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'rhysyngsun';
-        var disqus_identifier = 'http://rhysyngsun.com/thoughts-on-cloudformation.html';
-    var disqus_url = 'http://rhysyngsun.com/thoughts-on-cloudformation.html';
+        var disqus_identifier = 'http://rhysyngsun.com/slightly-less-worse-ways.html';
+    var disqus_url = 'http://rhysyngsun.com/slightly-less-worse-ways.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -134,18 +155,18 @@
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-10T08:10:10-04:00">Mar 10, 2015</time>
+            <time pubdate="pubdate" datetime="2015-03-11T07:44:00-04:00">Mar 11, 2015</time>
             <h4>Category</h4>
-            <a class="category-link" href="http://rhysyngsun.com/categories.html#aws-ref">AWS</a>
+            <a class="category-link" href="http://rhysyngsun.com/categories.html#software-ref">Software</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="http://rhysyngsun.com/tags.html#aws-ref">AWS
+                <li><a href="http://rhysyngsun.com/tags.html#development-ref">Development
                     <span>1</span>
 </a></li>
-                <li><a href="http://rhysyngsun.com/tags.html#cloudformation-ref">CloudFormation
+                <li><a href="http://rhysyngsun.com/tags.html#mindset-ref">Mindset
                     <span>1</span>
 </a></li>
-                <li><a href="http://rhysyngsun.com/tags.html#deployment-ref">Deployment
+                <li><a href="http://rhysyngsun.com/tags.html#software-ref">Software
                     <span>1</span>
 </a></li>
             </ul>
