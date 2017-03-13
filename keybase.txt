@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/rhysyngsun
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://rhysyngsun.com
+  * I am rhysyngsun (https://keybase.io/rhysyngsun) on keybase.
+  * I have a public key ASAOK_hASSwJfipWtd4Vs-9-b2UONMYd6r5KA8gVGIFXewo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101dcaf45650fcade432fa512ad14cf295074123bc215a55920fadfe7188279baa20a",
+            "host": "keybase.io",
+            "kid": "01200e2bf840492c097e2a56b5de15b3ef7e6f650e34c61deabe4a03c8151881577b0a",
+            "uid": "ffab0ae49c7da77a46d9380ea47d9400",
+            "username": "rhysyngsun"
+        },
+        "service": {
+            "hostname": "rhysyngsun.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.19"
+    },
+    "ctime": 1489438802,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1489438746,
+        "hash": "7633bba67e9592aed41f7b6ab30093c8b1c747e56febb5556122672ee4702a7bc160910ab04262bf9374ee971c16a6279ec88b4f5b5de415b6a839f3ac848cb1",
+        "seqno": 956565
+    },
+    "prev": "6a5e98bfca1832a4b78b394e6c025f9836711e5302971c1cf8bc966dfe650126",
+    "seqno": 15,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgDiv4QEksCX4qVrXeFbPvfm9lDjTGHeq+SgPIFRiBV3sKp3BheWxvYWTFAvh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxZGNhZjQ1NjUwZmNhZGU0MzJmYTUxMmFkMTRjZjI5NTA3NDEyM2JjMjE1YTU1OTIwZmFkZmU3MTg4Mjc5YmFhMjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMGUyYmY4NDA0OTJjMDk3ZTJhNTZiNWRlMTViM2VmN2U2ZjY1MGUzNGM2MWRlYWJlNGEwM2M4MTUxODgxNTc3YjBhIiwidWlkIjoiZmZhYjBhZTQ5YzdkYTc3YTQ2ZDkzODBlYTQ3ZDk0MDAiLCJ1c2VybmFtZSI6InJoeXN5bmdzdW4ifSwic2VydmljZSI6eyJob3N0bmFtZSI6InJoeXN5bmdzdW4uY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xOSJ9LCJjdGltZSI6MTQ4OTQzODgwMiwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDg5NDM4NzQ2LCJoYXNoIjoiNzYzM2JiYTY3ZTk1OTJhZWQ0MWY3YjZhYjMwMDkzYzhiMWM3NDdlNTZmZWJiNTU1NjEyMjY3MmVlNDcwMmE3YmMxNjA5MTBhYjA0MjYyYmY5Mzc0ZWU5NzFjMTZhNjI3OWVjODhiNGY1YjVkZTQxNWI2YTgzOWYzYWM4NDhjYjEiLCJzZXFubyI6OTU2NTY1fSwicHJldiI6IjZhNWU5OGJmY2ExODMyYTRiNzhiMzk0ZTZjMDI1Zjk4MzY3MTFlNTMwMjk3MWMxY2Y4YmM5NjZkZmU2NTAxMjYiLCJzZXFubyI6MTUsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAyNZvKMb8aC3LAQ7Xuny/m8jUb5SZctGOdMgFU/5LThn1qpDK/0c1CFvYhDE264YGoq+D2GMPdF3kci/uGMQOAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEID7vQmMZWtE1xNZOP14w1oUk4aeGVoDKnHgffrO4fegYo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rhysyngsun
+
+==================================================================
