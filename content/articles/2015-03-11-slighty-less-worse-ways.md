@@ -26,7 +26,7 @@ don't understand fully, something we misunderstand, or something we just plain d
 
 That leads we to that saying that I've crafted over the last few years that flips traditional thinking on its head:
 
-    "I've only found a slightly less worse way of doing things."
+> "I've only found a slightly less worse way of doing things."
 
 Now, that's doesn't mean I think everything I do is absolute garbage. In fact, I'm
 very proud of all the work I've done having not been traditionally educated in computer science.

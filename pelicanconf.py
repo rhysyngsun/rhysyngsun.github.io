@@ -4,45 +4,82 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Nathan Levesque'
 SITENAME = u"Rhysyngsun's Blog"
-SITEURL = ''
+SITEURL = 'http://localhost:3000/'
+SITETITLE = AUTHOR
+SITESUBTITLE = 'Senior Software Engineer'
+SITEDESCRIPTION = '%s\'s Thoughts and Writings' % AUTHOR
+SITELOGO = '//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac'
+FAVICON = '/images/favicon.ico'
+BROWSER_COLOR = '#999999'
+PYGMENTS_STYLE = 'monokai'
 
-LANDING_PAGE_ABOUT = {
-    'title': 'About me',
-    'details': '<p>My name is Nathan Levesque. I\'m a software developer who spends his time building software that scales.</p><p>I work at <a href="https://vsnap.com">Vsnap</a> as Lead Developer with Node.js + Postgres and figure out how to make it all work on AWS.</p>'
-}
+ROBOTS = 'index, follow'
+
+COPYRIGHT_YEAR = '2012-2017'
+
+SUMMARY_MAX_LENGTH = 150
 
 PATH = 'content'
 
 TIMEZONE = 'US/Eastern'
 
-DEFAULT_LANG = u'en'
+I18N_TEMPLATES_LANG = 'en'
+DEFAULT_LANG = 'en'
+OG_LOCALE = 'en_US'
+LOCALE = 'en_US'
 
-THEME = "/Users/nathan/dev/oss/pelican-elegant"
+DATE_FORMATS = {
+    'en': '%B %d, %Y',
+}
+
+THEME = "/home/nathan/oss/pelican-themes/Flex"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
 USE_FOLDER_AS_CATEGORY = False
+MAIN_MENU = True
+HOME_HIDE_TAGS = True
+
 FILENAME_METADATA='(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
-STATIC_PATHS = ['images', 'CNAME', 'theme/images']
+STATIC_PATHS = ['images', 'CNAME', 'theme/images', 'extra']
 
 # Blogroll
-LINKS = (('https://github.com/rhysyngsun', 'Github'),)
+LINKS = []
 
 # Social widget
-SOCIAL = (('https://twitter.com/rhysyngsun', 'Twitter'),)
+SOCIAL = (
+    ('twitter', 'https://twitter.com/rhysyngsun'),
+    ('gitlab', 'https://gitlab.com/rhysyngsun'),
+    ('github', 'https://github.com/rhysyngsun'),
+)
 
-DEFAULT_PAGINATION = False
+CC_LICENSE = {
+    'name': 'Creative Commons Attribution-ShareAlike',
+    'version': '4.0',
+    'slug': 'by-sa'
+}
+
+MENUITEMS = (('Archives', '/archives.html'),
+             ('Categories', '/categories.html'),
+             ('Tags', '/tags.html'),)
+
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-PLUGIN_PATHS = ['/Users/nathan/dev/oss/pelican-plugins']
-PLUGINS = ["pelican-langcategory", 'sitemap', 'extract_toc', 'tipue_search']
+PLUGIN_PATHS = ['/home/nathan/oss/pelican-plugins']
+PLUGINS = ['sitemap', 'post_stats', 'related_posts']
+
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
 MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
-DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
+DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives'))
 TAG_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
