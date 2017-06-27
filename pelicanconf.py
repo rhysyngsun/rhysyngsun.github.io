@@ -53,9 +53,11 @@ LINKS = []
 
 # Social widget
 SOCIAL = (
+    ('linkedin', 'https://www.linkedin.com/in/nathanlevesque'),
     ('twitter', 'https://twitter.com/rhysyngsun'),
     ('gitlab', 'https://gitlab.com/rhysyngsun'),
     ('github', 'https://github.com/rhysyngsun'),
+    ('stack-overflow', 'https://stackoverflow.com/users/140999/rhysyngsun'),
 )
 
 CC_LICENSE = {
