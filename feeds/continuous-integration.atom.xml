@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/continuous-integration.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2014-11-04T20:02:10-04:00</updated><entry><title>My Ideal Continuous Integration Server</title><link href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html" rel="alternate"></link><updated>2014-11-04T20:02:10-04:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2014-11-04:my-ideal-continuous-integration-server.html</id><summary type="html">&lt;p&gt;I've spent the last week looking at various CI solutions. My main criteria were:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog - Continuous Integration</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/continuous-integration.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2014-11-04T20:02:10-04:00</updated><entry><title>My Ideal Continuous Integration Server</title><link href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html" rel="alternate"></link><published>2014-11-04T20:02:10-04:00</published><updated>2014-11-04T20:02:10-04:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2014-11-04:/my-ideal-continuous-integration-server.html</id><summary type="html">&lt;p&gt;I've spent the last week looking at various CI solutions. My main criteria were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a flexible &lt;a href="http://martinfowler.com/bliki/ContinuousDelivery.html"&gt;Continuous Delivery&lt;/a&gt; &lt;a href="http://martinfowler.com/bliki/DeploymentPipeline.html"&gt;deployment pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ability to promote builds to various environments (QA, prod, etc)&lt;/li&gt;
+&lt;li&gt;alerting to our team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It started with an attempt at wrangling the defacto tool, &lt;a href="http://jenkins-ci.org"&gt;Jenkins&lt;/a&gt; into a usable system but that quickly proved to be an uphill battle.
+Overly complication configuration aside, the final straw with Jenkins was being unable to configure
+&lt;a href="https://help.github.com/articles/creating-webhooks"&gt;GitHub Web Hooks&lt;/a&gt;, however
+that capability was dependent on having GitHub configured as &lt;em&gt;the&lt;/em&gt; authentication method for users.&lt;/p&gt;
+&lt;p&gt;That's a pretty flawed design that speaks to a poor separation of concerns;
+authentication strategy should not be tangled with an unrelated feature of the product.
+Overall, I think the legacy of Jenkins' plugin architecture is weighing it (and its users) down.&lt;/p&gt;
+&lt;p&gt;I also took a look at numerous open source competitors to Jenkins as well as SaaS-based solutions …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've spent the last week looking at various CI solutions. My main criteria were:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;create a flexible &lt;a href="http://martinfowler.com/bliki/ContinuousDelivery.html"&gt;Continuous Delivery&lt;/a&gt; &lt;a href="http://martinfowler.com/bliki/DeploymentPipeline.html"&gt;deployment pipeline&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;ability to promote builds to various environments (QA, prod, etc)&lt;/li&gt;
@@ -27,4 +40,4 @@ It does seem a &lt;em&gt;tad&lt;/em&gt; more complicated than I need, but it's l
 &lt;p&gt;I still feel like Go is needs a lot of work and hope to contribute to it myself at some point (although I wish it wasn't written in Java).&lt;/p&gt;
 &lt;p&gt;I've also got feeling that I should take a stab at my own solution (to be done on my own time, not my employer's).
 There's a lot to still be done in this space and I have a gut feeling that it needs a fresh approach that incorporates all these learnings.
-The fresh start is needed because an ideal solution for CI needs back pressure against complexity.&lt;/p&gt;</summary><category term="Continuous Integration"></category><category term="Continuous Delivery"></category></entry></feed>
+The fresh start is needed because an ideal solution for CI needs back pressure against complexity.&lt;/p&gt;</content><category term="Continuous Integration"></category><category term="Continuous Delivery"></category></entry></feed>

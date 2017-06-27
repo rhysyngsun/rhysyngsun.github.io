@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/software-engineering.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2014-03-06T17:50:15-05:00</updated><entry><title>Connascence in RequireJS</title><link href="http://rhysyngsun.com/connascence-in-requirejs.html" rel="alternate"></link><updated>2014-03-06T17:50:15-05:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2014-03-06:connascence-in-requirejs.html</id><summary type="html">&lt;p&gt;I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog - Software Engineering</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/software-engineering.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2014-03-06T17:50:15-05:00</updated><entry><title>Connascence in RequireJS</title><link href="http://rhysyngsun.com/connascence-in-requirejs.html" rel="alternate"></link><published>2014-03-06T17:50:15-05:00</published><updated>2014-03-06T17:50:15-05:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2014-03-06:/connascence-in-requirejs.html</id><summary type="html">&lt;p&gt;I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.&lt;/p&gt;
+&lt;p&gt;We've all run across examples of complex code: a class with too many concerns, a function that's doing too many operations, or an abstraction in a place where it's unnecessary.&lt;/p&gt;
+&lt;p&gt;A few days after his passing, I watched a video of &lt;a href="http://en.wikipedia.org/wiki/Jim_Weirich"&gt;Jim Weirich&lt;/a&gt; of Rake fame &lt;a href="http://youtu.be/NLT7Qcn_PmI"&gt;giving a presentation&lt;/a&gt; on the concept of &lt;a href="http://en.wikipedia.org/wiki/Connascence_(computer_programming)"&gt;connascence&lt;/a&gt;. I highly recommend you watch it if you're unfamiliar with the topic.&lt;/p&gt;
+&lt;p&gt;This topic really hit on one of those things that I'd previously vaguely categorized as a "code smell." Code that's highly coupled makes for painful points when you have to change a behavior in the overall system. It's nice to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.&lt;/p&gt;
 &lt;p&gt;We've all run across examples of complex code: a class with too many concerns, a function that's doing too many operations, or an abstraction in a place where it's unnecessary.&lt;/p&gt;
 &lt;p&gt;A few days after his passing, I watched a video of &lt;a href="http://en.wikipedia.org/wiki/Jim_Weirich"&gt;Jim Weirich&lt;/a&gt; of Rake fame &lt;a href="http://youtu.be/NLT7Qcn_PmI"&gt;giving a presentation&lt;/a&gt; on the concept of &lt;a href="http://en.wikipedia.org/wiki/Connascence_(computer_programming)"&gt;connascence&lt;/a&gt;. I highly recommend you watch it if you're unfamiliar with the topic.&lt;/p&gt;
 &lt;p&gt;This topic really hit on one of those things that I'd previously vaguely categorized as a "code smell." Code that's highly coupled makes for painful points when you have to change a behavior in the overall system. It's nice to have a quality metric for that now.&lt;/p&gt;
 &lt;p&gt;A few days later it struck me that this concept explains very well why I've always had trouble with this style of &lt;a href="http://requirejs.org/"&gt;RequireJS&lt;/a&gt; (this example lifted from their docs &lt;a href="http://requirejs.org/docs/api.html#defdep"&gt;here&lt;/a&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//my/shirt.js now has some dependencies, a cart and inventory&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//my/shirt.js now has some dependencies, a cart and inventory&lt;/span&gt;
 &lt;span class="c1"&gt;//module in the same directory as shirt.js&lt;/span&gt;
 &lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./cart&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./inventory&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;cart&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;inventory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="c1"&gt;//return an object to define the &amp;quot;my/shirt&amp;quot; module.&lt;/span&gt;
@@ -23,23 +26,23 @@
 &lt;p&gt;In this example, there's an increasing Connascence of Order between the array of dependencies and the argument list as the number of dependencies for your module increase. Ideally, you should be keeping your dependency count as low as possible, but very often it slips over two or three, which is the point at which I'd say this type of connascence starts to become troublesome.&lt;/p&gt;
 &lt;p&gt;I'm also one of those folks who is very anal with making sure dependencies/imports are logically ordered and (if necessary) logically grouped. That means I'm occasionally inserting a dependency into list, rather than appending it.&lt;/p&gt;
 &lt;p&gt;Note that there's also a Connascence of Name between a dependency's name in the list and the filename of that module. There's no way to get away from that, but you can completely remove the Connascence of Order by changing to a CommonJS-ish style:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;//my/shirt.js now has some dependencies, a cart and inventory&lt;/span&gt;
-    &lt;span class="c1"&gt;//module in the same directory as shirt.js&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;cart&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./cart&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="nx"&gt;inventory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./inventory&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;define(function(require) {
+    //my/shirt.js now has some dependencies, a cart and inventory
+    //module in the same directory as shirt.js
+    var cart = require(&amp;quot;./cart&amp;quot;),
+        inventory = require(&amp;quot;./inventory&amp;quot;);
 
-    &lt;span class="c1"&gt;//return an object to define the &amp;quot;my/shirt&amp;quot; module.&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="nx"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;large&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="nx"&gt;addToCart&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="nx"&gt;inventory&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;decrement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;cart&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
+    //return an object to define the &amp;quot;my/shirt&amp;quot; module.
+    return {
+        color: &amp;quot;blue&amp;quot;,
+        size: &amp;quot;large&amp;quot;,
+        addToCart: function() {
+            inventory.decrement(this);
+            cart.add(this);
+        }
+    }
+});
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The CommonJS style eliminates a whole class of programmer error. Sure you might have a few extra lines of code, but you've removed the need for the mental overhead of making sure the order is right in both places.&lt;/p&gt;</summary><category term="Javascript"></category><category term="RequireJS"></category><category term="Software Engineering"></category></entry></feed>
+&lt;p&gt;The CommonJS style eliminates a whole class of programmer error. Sure you might have a few extra lines of code, but you've removed the need for the mental overhead of making sure the order is right in both places.&lt;/p&gt;</content><category term="Javascript"></category><category term="RequireJS"></category><category term="Software Engineering"></category></entry></feed>

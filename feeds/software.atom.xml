@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/software.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2015-03-11T07:44:00-04:00</updated><entry><title>Slightly Less Worse Ways</title><link href="http://rhysyngsun.com/slightly-less-worse-ways.html" rel="alternate"></link><updated>2015-03-11T07:44:00-04:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2015-03-11:slightly-less-worse-ways.html</id><summary type="html">&lt;p&gt;When I attended college I observed some people around me that
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rhysyngsun's Blog - Software</title><link href="http://rhysyngsun.com/" rel="alternate"></link><link href="http://rhysyngsun.com/feeds/software.atom.xml" rel="self"></link><id>http://rhysyngsun.com/</id><updated>2015-03-11T07:44:00-04:00</updated><entry><title>Slightly Less Worse Ways</title><link href="http://rhysyngsun.com/slightly-less-worse-ways.html" rel="alternate"></link><published>2015-03-11T07:44:00-04:00</published><updated>2015-03-11T07:44:00-04:00</updated><author><name>Nathan Levesque</name></author><id>tag:rhysyngsun.com,2015-03-11:/slightly-less-worse-ways.html</id><summary type="html">&lt;p&gt;When I attended college I observed some people around me that
+became satisfied with their status quo. They felt they had learned enough
+and that was the enough for them. They felt they knew everything they needed to know.
+Maybe that was hubris, maybe it was laziness, I'm not quite sure.
+The word I used was stagnation.&lt;/p&gt;
+&lt;p&gt;I knew I wanted to avoid at all costs. This has stuck with me to this day, but
+I've continued to evolve it by adding on little mental hacks and mantras as I went.
+I try to do what I can to keep hubris at bay because I've found it to be one of the
+warning signs of heading down an ill-fated path.&lt;/p&gt;
+&lt;p&gt;One of the things that's befuddled me in recent years is the concept of things that
+are the "best" or variations therof. In the software world one of the most …&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I attended college I observed some people around me that
 became satisfied with their status quo. They felt they had learned enough
 and that was the enough for them. They felt they knew everything they needed to know.
 Maybe that was hubris, maybe it was laziness, I'm not quite sure.
@@ -17,10 +27,9 @@ They're the best...for a while...then they're gone. Maybe we should call the
 elusive. Mostly because of the human factor. There's always going to be something we
 don't understand fully, something we misunderstand, or something we just plain did wrong.&lt;/p&gt;
 &lt;p&gt;That leads we to that saying that I've crafted over the last few years that flips traditional thinking on its head:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot;I&amp;#39;ve only found a slightly less worse way of doing things.&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;blockquote&gt;
+&lt;p&gt;"I've only found a slightly less worse way of doing things."&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Now, that's doesn't mean I think everything I do is absolute garbage. In fact, I'm
 very proud of all the work I've done having not been traditionally educated in computer science.
 I say that because it forces you to assume a certain measure of fallibility in yourself.
@@ -36,4 +45,4 @@ make those mistakes in a safe environment (by safe, I don't just mean free from 
 others but also free from shaming those who screw up).&lt;/p&gt;
 &lt;p&gt;Lastly, it's an acknowledgement of entropy in our lives. Things break down. What used
 to work doesn't work anymore or at least not as well. Knowledge becomes outdated and
-needs refreshing. You need refreshing.&lt;/p&gt;</summary><category term="Software"></category><category term="Development"></category><category term="Mindset"></category></entry></feed>
+needs refreshing. You need refreshing.&lt;/p&gt;</content><category term="Software"></category><category term="Development"></category><category term="Mindset"></category></entry></feed>

@@ -1,183 +1,317 @@
+
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8"> 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Nathan Levesque" />
-        <meta name="copyright" content="Nathan Levesque" />
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/stylesheet/style.min.css">
 
-<meta property="og:title" content="About me"/>
-<meta name="twitter:title" content="About me">
-<meta property="og:url" content="http://rhysyngsun.com" />
-<meta property="og:site_name" content="Rhysyngsun&#39;s Blog" />
-<meta property="og:article:author" content="Nathan Levesque" />
-        <title>Rhysyngsun&#39;s Blog
-</title>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/custom.css" media="screen">
-        <link href="http://rhysyngsun.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rhysyngsun&#39;s Blog - Full Atom Feed" />
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-5772322-2', 'auto');
-    ga('send', 'pageview');
+  <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://rhysyngsun.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#999999">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#999999">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="author" content="Nathan Levesque" />
+    <meta name="description" content="Nathan Levesque's Thoughts and Writings" />
+<meta property="og:site_name" content="Rhysyngsun's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Rhysyngsun's Blog"/>
+<meta property="og:description" content="Nathan Levesque's Thoughts and Writings"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://rhysyngsun.com"/>
+<meta property="og:image" content="//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac">
+
+  <title>Rhysyngsun's Blog</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://rhysyngsun.com">
+        <img src="//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac" alt="Nathan Levesque" title="Nathan Levesque">
+      </a>
+      <h1><a href="http://rhysyngsun.com">Nathan Levesque</a></h1>
+
+<p>Senior Software Engineer</p>
+
+      <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/rhysyngsun" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/rhysyngsun" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/rhysyngsun" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://rhysyngsun.com">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://rhysyngsun.com/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+
+
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/slightly-less-worse-ways.html#slightly-less-worse-ways">Slightly Less Worse Ways</a></h2>
+    <p>
+          Posted on March 11, 2015 in <a href="http://rhysyngsun.com/category/software.html">Software</a>
+
+
+
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>When I attended college I observed some people around me that
+became satisfied with their status quo. They felt they had learned enough
+and that was the enough for them. They felt they knew everything they needed to know.
+Maybe that was hubris, maybe it was laziness, I'm not quite sure.
+The word I used was stagnation.</p>
+<p>I knew I wanted to avoid at all costs. This has stuck with me to this day, but
+I've continued to evolve it by adding on little mental hacks and mantras as I went.
+I try to do what I can to keep hubris at bay because I've found it to be one of the
+warning signs of heading down an ill-fated path.</p>
+<p>One of the things that's befuddled me in recent years is the concept of things that
+are the "best" or variations therof. In the software world one of the most …</p>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/slightly-less-worse-ways.html#slightly-less-worse-ways">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/thoughts-on-cloudformation.html#thoughts-on-cloudformation">Thoughts on CloudFormation</a></h2>
+    <p>
+          Posted on March 10, 2015 in <a href="http://rhysyngsun.com/category/aws.html">AWS</a>
+
+
+
+        &#8226; 3 min read
+    </p>
+  </header>
+  <div>
+      <p>I've spent the last 10 months working with AWS' CloudFormation service. I felt it would be useful to put my thoughts together on how I found the service to be for a small startup.</p>
+<h2>Pros</h2>
+<p>CloudFormation is great if you don't want to deal with the orchestration of your deployments. It runs over your configuration files and figures out what the delta changes are, applies them taking dependencies into account, and will also rollback if a failure occurs.</p>
+<p>Overall, CloudFormation works well for offloading the execution of deployments.</p>
+<h2>Cons</h2>
+<p>There are a few places where CloudFormation begins to fall short for me.</p>
+<p>The first is complexity. I'm not saying the service can't handle the complexity, but humans can't handle the complexity of the JSON that CloudFormation uses for configuration. Even a moderately complex environment can begin to clock in at thousands of lines of JSON. At that point, it starts …</p>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/thoughts-on-cloudformation.html#thoughts-on-cloudformation">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html#my-ideal-continuous-integration-server">My Ideal Continuous Integration Server</a></h2>
+    <p>
+          Posted on November 04, 2014 in <a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a>
+
+
+
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>I've spent the last week looking at various CI solutions. My main criteria were:</p>
+<ul>
+<li>create a flexible <a href="http://martinfowler.com/bliki/ContinuousDelivery.html">Continuous Delivery</a> <a href="http://martinfowler.com/bliki/DeploymentPipeline.html">deployment pipeline</a></li>
+<li>ability to promote builds to various environments (QA, prod, etc)</li>
+<li>alerting to our team</li>
+</ul>
+<p>It started with an attempt at wrangling the defacto tool, <a href="http://jenkins-ci.org">Jenkins</a> into a usable system but that quickly proved to be an uphill battle.
+Overly complication configuration aside, the final straw with Jenkins was being unable to configure
+<a href="https://help.github.com/articles/creating-webhooks">GitHub Web Hooks</a>, however
+that capability was dependent on having GitHub configured as <em>the</em> authentication method for users.</p>
+<p>That's a pretty flawed design that speaks to a poor separation of concerns;
+authentication strategy should not be tangled with an unrelated feature of the product.
+Overall, I think the legacy of Jenkins' plugin architecture is weighing it (and its users) down.</p>
+<p>I also took a look at numerous open source competitors to Jenkins as well as SaaS-based solutions …</p>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html#my-ideal-continuous-integration-server">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/connascence-in-requirejs.html#connascence-in-requirejs">Connascence in RequireJS</a></h2>
+    <p>
+          Posted on March 06, 2014 in <a href="http://rhysyngsun.com/category/software-engineering.html">Software Engineering</a>
+
+
+
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>I'm a huge fan of keeping code complexity to a minimum. Note that I'm distinguishing code complexity from system complexity. I believe you can have a complex system built on simple code. In fact, that's what you want because such code is highly testable.</p>
+<p>We've all run across examples of complex code: a class with too many concerns, a function that's doing too many operations, or an abstraction in a place where it's unnecessary.</p>
+<p>A few days after his passing, I watched a video of <a href="http://en.wikipedia.org/wiki/Jim_Weirich">Jim Weirich</a> of Rake fame <a href="http://youtu.be/NLT7Qcn_PmI">giving a presentation</a> on the concept of <a href="http://en.wikipedia.org/wiki/Connascence_(computer_programming)">connascence</a>. I highly recommend you watch it if you're unfamiliar with the topic.</p>
+<p>This topic really hit on one of those things that I'd previously vaguely categorized as a "code smell." Code that's highly coupled makes for painful points when you have to change a behavior in the overall system. It's nice to …</p>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/connascence-in-requirejs.html#connascence-in-requirejs">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html#grails-using-a-specific-version-of-lesscss-with-lesscss-resources">Grails - Using a specific version of LessCSS with lesscss-resources</a></h2>
+    <p>
+          Posted on March 11, 2013 in <a href="http://rhysyngsun.com/category/jvm.html">JVM</a>
+
+
+
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>A few days ago I was trying to integrate the <a href="http://grails.org/plugin/twitter-bootstrap">twitter-bootstrap</a> Grails plugin into an app but was
+    having difficulty getting the less sources to play nice with the <a href="http://grails.org/plugin/lesscss-resources">lesscss-resources</a> plugin.</p>
+<p><a href="https://github.com/paulfairless/grails-lesscss-resources/issues/45">It turned out</a> that the most recent
+    version of bootstrap used LessCSS syntax that is only available in the 1.3.3 version of the lesscss compiler. The
+    lesscss-resources depends on version 1.3.1, so to work around that issue you can update your BuildConfig.groovy settings to the following to force a specific version of the lesscss compiler:</p>
+<div class="highlight"><pre><span></span><span class="n">grails</span><span class="o">.</span><span class="na">project</span><span class="o">.</span><span class="na">dependency</span><span class="o">.</span><span class="na">resolution</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">dependencies</span> <span class="o">{</span>
+        <span class="n">runtime</span> <span class="o">(</span><span class="s1">&#39;org.lesscss:lesscss:1.3.3&#39;</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="n">plugins</span> <span class="o">{</span>
+        <span class="n">compile</span><span class="o">(</span><span class="s2">&quot;:lesscss-resources:1.3.1&quot;</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">excludes</span> <span class="s2">&quot;lesscss&quot;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html#grails-using-a-specific-version-of-lesscss-with-lesscss-resources">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/mozilla-dev-derby-july.html#mozilla-dev-derby-july">Mozilla Dev Derby July</a></h2>
+    <p>
+          Posted on July 29, 2012 in <a href="http://rhysyngsun.com/category/css.html">CSS</a>
+
+
+
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>I've spent some time this weekend working on an entry for <a href="https://developer.mozilla.org/en-US/demos/devderby">Mozilla's Dev Derby</a>. You can find my entry <a href="https://developer.mozilla.org/en-US/demos/detail/antique-clock">hosted on the competition site</a>. This is my first entry so please, go ahead and vote for it.</p>
+<p>I also noted today before I submitted my entry that I'm not the only one who <a href="https://developer.mozilla.org/en-US/demos/detail/counter-clock">thought to make a clock</a>. It's interesting to see our our visuals, animations, and implementations differ.</p>
+<h4>How I Did It</h4>
+<p>I've this entry available as a <a href="https://github.com/rhysyngsun/devderby-07-2012">GitHub repo</a> so you can browse the source yourself.</p>
+<p>I wanted this to be a relatively quick weekend project and fun to do. A requirement of the competition is for it to work across various browsers, so I started with <a href="http://sass-lang.com/">Sass</a> and <a href="http://compass-style.org/">Compass</a> to deal with generating a lot of the yuck that comes with browser specific code (particularly vendor-prefixed CSS). Sass was also very useful in generating the animations. Just …</p>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/mozilla-dev-derby-july.html#mozilla-dev-derby-july">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://rhysyngsun.com/from-posterous-to-jekyll-and-github-pages.html#from-posterous-to-jekyll-and-github-pages">From Posterous to Jekyll and GitHub Pages</a></h2>
+    <p>
+          Posted on April 06, 2012 in <a href="http://rhysyngsun.com/category/site-news.html">Site News</a>
+
+
+
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>This is my first time playing with building a Jekyll-based site for <a href="http://pages.github.com">GitHub Pages</a>. In the past I've used Wordpress and then Posterous, but with obvious recent events that wasn't going to be good for the long term. I honestly only ever wrote a single "First Post" on posterous, because I didn't have any personal investment in the site.</p>
+<p>I had previously got sick of the maintenence around Wordpress (not to mention the PHP) and moved to Posterous for simplicity. I feel Jekyll/GHP balances my desire for simplicity with my need for control when I need it.</p>
+      <br>
+      <a class="btn" href="http://rhysyngsun.com/from-posterous-to-jekyll-and-github-pages.html#from-posterous-to-jekyll-and-github-pages">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>
+  &copy; Nathan Levesque 2012-2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5772322-2', 'auto');
+  ga('send', 'pageview');
 </script>
-    </head>
-    <body>
-        <div id="content-sans-footer">
-        <div class="navbar navbar-static-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="http://rhysyngsun.com/"><span class=site-name>Rhysyngsun's Blog</span></a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-right top-menu">
-                            <li  class="active"><a href="http://rhysyngsun.com">Home</a></li>
-                            <li ><a href="http://rhysyngsun.com/categories.html">Categories</a></li>
-                            <li ><a href="http://rhysyngsun.com/tags.html">Tags</a></li>
-                            <li ><a href="http://rhysyngsun.com/archives.html">Archives</a></li>
-                            <li><form class="navbar-search" action="http://rhysyngsun.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span1"></div>
-                <div class="span10">
-<div class="row-fluid">
-    <header class="page-header span10 offset2">
-    <h1><a href="http://rhysyngsun.com">About me</a></h1>
-    </header>
+<!-- End Google Analytics -->
 
-    <div class="row-fluid">
-        <div class="span8 offset2">
-            <header>
-            <h1 id="about-me">About me</h1>
-            </header>
-            <div class="article-content">
-                <p>My name is Nathan Levesque. I'm a software developer who spends his time building software that scales.</p><p>I work at <a href="https://vsnap.com">Vsnap</a> as Lead Developer with Node.js + Postgres and figure out how to make it all work on AWS.</p>
-            </div>
-        </div>
 
-    </div>
 
-    <div class="row-fluid">
-        <div class="span8 offset2">
-            <header>
-            <h1 id="recent-posts">Recent Posts <a id="allposts" href="http://rhysyngsun.com/archives.html">all posts</a></h1>
-            </header>
-        <div class="recent-posts">
-            <article>
-                <a href="http://rhysyngsun.com/slightly-less-worse-ways.html">Slightly Less Worse Ways  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#software-ref">Software</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2015-03-11T07:44:00-04:00">Wed 11 March 2015</time>
-                </div>
-                </section>
-            </article>
-            <article>
-                <a href="http://rhysyngsun.com/thoughts-on-cloudformation.html">Thoughts on CloudFormation  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#aws-ref">AWS</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2015-03-10T08:10:10-04:00">Tue 10 March 2015</time>
-                </div>
-                </section>
-            </article>
-            <article>
-                <a href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html">My Ideal Continuous Integration Server  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#continuous-integration-ref">Continuous Integration</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2014-11-04T20:02:10-04:00">Tue 04 November 2014</time>
-                </div>
-                </section>
-            </article>
-            <article>
-                <a href="http://rhysyngsun.com/connascence-in-requirejs.html">Connascence in RequireJS  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#software-engineering-ref">Software Engineering</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2014-03-06T17:50:15-05:00">Thu 06 March 2014</time>
-                </div>
-                </section>
-            </article>
-            <article>
-                <a href="http://rhysyngsun.com/grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html">Grails - Using a specific version of LessCSS with lesscss-resources  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#jvm-ref">JVM</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2013-03-11T09:30:00-04:00">Mon 11 March 2013</time>
-                </div>
-                </section>
-            </article>
-            <article>
-                <a href="http://rhysyngsun.com/mozilla-dev-derby-july.html">Mozilla Dev Derby July  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#css-ref">CSS</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2012-07-29T16:30:00-04:00">Sun 29 July 2012</time>
-                </div>
-                </section>
-            </article>
-            <article>
-                <a href="http://rhysyngsun.com/from-posterous-to-jekyll-and-github-pages.html">From Posterous to Jekyll and GitHub Pages  </a>
-                <section>
-                    posted in
-                <a href="http://rhysyngsun.com/categories.html#site-news-ref">Site News</a>
-                <div class="recent-posts-time">
-                <time pubdate="pubdate" datetime="2012-04-06T15:33:00-04:00">Fri 06 April 2012</time>
-                </div>
-                </section>
-            </article>
-        </div>
-        </div>
-    </div>
-</div>
-                </div>
-                <div class="span1"></div>
-            </div>
-        </div>
-        <div id="push"></div>
-    </div>
-<footer>
-<div id="footer">
-    <ul class="footer-content">
-        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
-    </ul>
-</div>
-</footer>        <script src="http://code.jquery.com/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script>
-            function validateForm(query)
-            {
-                return (query.length > 0);
-            }
-        </script>
-    </body>
-    <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Rhysyngsun's Blog ",
+  "url" : "http://rhysyngsun.com",
+  "image": "//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac",
+  "description": "Nathan Levesque's Thoughts and Writings"
+}
+</script>
+</body>
 </html>

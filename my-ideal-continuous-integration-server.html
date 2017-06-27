@@ -1,83 +1,103 @@
+
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8"> 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Nathan Levesque" />
-        <meta name="copyright" content="Nathan Levesque" />
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/stylesheet/style.min.css">
 
-<meta name="keywords" content="Continuous Integration, Continuous Delivery, Continuous Integration, " />
+  <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/font-awesome/css/font-awesome.min.css">
 
-<meta property="og:title" content="My Ideal Continuous Integration Server "/>
-<meta property="og:url" content="http://rhysyngsun.com/my-ideal-continuous-integration-server.html" />
-<meta property="og:description" content="I&#39;ve spent the last week looking at various CI solutions. My main criteria were: create a flexible Continuous Delivery deployment pipeline ability to promote builds to various environments (QA, prod, etc) alerting to our team It started with an attempt at wrangling the defacto tool, Jenkins into a usable ..." />
-<meta property="og:site_name" content="Rhysyngsun&#39;s Blog" />
-<meta property="og:article:author" content="Nathan Levesque" />
-<meta property="og:article:published_time" content="2014-11-04T20:02:10-04:00" />
-<meta name="twitter:title" content="My Ideal Continuous Integration Server ">
-<meta name="twitter:description" content="I&#39;ve spent the last week looking at various CI solutions. My main criteria were: create a flexible Continuous Delivery deployment pipeline ability to promote builds to various environments (QA, prod, etc) alerting to our team It started with an attempt at wrangling the defacto tool, Jenkins into a usable ...">
 
-        <title>My Ideal Continuous Integration Server  · Rhysyngsun&#39;s Blog
-</title>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/css/custom.css" media="screen">
-        <link href="http://rhysyngsun.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rhysyngsun&#39;s Blog - Full Atom Feed" />
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-5772322-2', 'auto');
-    ga('send', 'pageview');
-</script>
-    </head>
-    <body>
-        <div id="content-sans-footer">
-        <div class="navbar navbar-static-top">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="http://rhysyngsun.com/"><span class=site-name>Rhysyngsun's Blog</span></a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-right top-menu">
-                            <li ><a href="http://rhysyngsun.com">Home</a></li>
-                            <li ><a href="http://rhysyngsun.com/categories.html">Categories</a></li>
-                            <li ><a href="http://rhysyngsun.com/tags.html">Tags</a></li>
-                            <li ><a href="http://rhysyngsun.com/archives.html">Archives</a></li>
-                            <li><form class="navbar-search" action="http://rhysyngsun.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span1"></div>
-                <div class="span10">
-<article>
-<div class="row-fluid">
-    <header class="page-header span10 offset2">
-    <h1><a href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html"> My Ideal Continuous Integration Server  </a></h1>
-    </header>
-</div>
+    <link href="http://rhysyngsun.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog Atom">
 
-<div class="row-fluid">
-        <div class="span8 offset2 article-content">
 
-            
-            <p>I've spent the last week looking at various CI solutions. My main criteria were:</p>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#999999">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#999999">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Nathan Levesque" />
+<meta name="description" content="I've spent the last week looking at various CI solutions. My main criteria were: create a flexible Continuous Delivery deployment pipeline ability to promote builds to various environments (QA, prod, etc) alerting to our team It started with an attempt at wrangling the defacto tool, Jenkins into a usable system but that quickly proved to be an uphill battle. Overly complication configuration aside, the final straw with Jenkins was being unable to configure GitHub Web Hooks, however that capability was dependent on having GitHub configured as the authentication method for users. That's a pretty flawed design that speaks to a poor separation of concerns; authentication strategy should not be tangled with an unrelated feature of the product. Overall, I think the legacy of Jenkins' plugin architecture is weighing it (and its users) down. I also took a look at numerous open source competitors to Jenkins as well as SaaS-based solutions …" />
+<meta name="keywords" content="Continuous Integration, Continuous Delivery">
+<meta property="og:site_name" content="Rhysyngsun's Blog"/>
+<meta property="og:title" content="My Ideal Continuous Integration Server"/>
+<meta property="og:description" content="I've spent the last week looking at various CI solutions. My main criteria were: create a flexible Continuous Delivery deployment pipeline ability to promote builds to various environments (QA, prod, etc) alerting to our team It started with an attempt at wrangling the defacto tool, Jenkins into a usable system but that quickly proved to be an uphill battle. Overly complication configuration aside, the final straw with Jenkins was being unable to configure GitHub Web Hooks, however that capability was dependent on having GitHub configured as the authentication method for users. That's a pretty flawed design that speaks to a poor separation of concerns; authentication strategy should not be tangled with an unrelated feature of the product. Overall, I think the legacy of Jenkins' plugin architecture is weighing it (and its users) down. I also took a look at numerous open source competitors to Jenkins as well as SaaS-based solutions …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://rhysyngsun.com/my-ideal-continuous-integration-server.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2014-11-04 20:02:10-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://rhysyngsun.com/author/nathan-levesque.html">
+<meta property="article:section" content="Continuous Integration"/>
+<meta property="article:tag" content="Continuous Integration"/>
+<meta property="article:tag" content="Continuous Delivery"/>
+<meta property="og:image" content="//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac">
+
+  <title>Rhysyngsun's Blog &ndash; My Ideal Continuous Integration Server</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://rhysyngsun.com">
+        <img src="//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac" alt="Nathan Levesque" title="Nathan Levesque">
+      </a>
+      <h1><a href="http://rhysyngsun.com">Nathan Levesque</a></h1>
+
+<p>Senior Software Engineer</p>
+
+      <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/rhysyngsun" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/rhysyngsun" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/rhysyngsun" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://rhysyngsun.com">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://rhysyngsun.com/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="my-ideal-continuous-integration-server">My Ideal Continuous Integration Server</h1>
+    <p>
+          Posted on November 04, 2014 in <a href="http://rhysyngsun.com/category/continuous-integration.html">Continuous Integration</a>
+
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <p>I've spent the last week looking at various CI solutions. My main criteria were:</p>
 <ul>
 <li>create a flexible <a href="http://martinfowler.com/bliki/ContinuousDelivery.html">Continuous Delivery</a> <a href="http://martinfowler.com/bliki/DeploymentPipeline.html">deployment pipeline</a></li>
 <li>ability to promote builds to various environments (QA, prod, etc)</li>
@@ -106,126 +126,74 @@ It does seem a <em>tad</em> more complicated than I need, but it's likely becaus
 <p>I've also got feeling that I should take a stab at my own solution (to be done on my own time, not my employer's).
 There's a lot to still be done in this space and I have a gut feeling that it needs a fresh approach that incorporates all these learnings.
 The fresh start is needed because an ideal solution for CI needs back pressure against complexity.</p>
-            
-            <section>
-<div class="accordion" id="accordion2">
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://rhysyngsun.com/my-ideal-continuous-integration-server.html#disqus_thread">
-                Comments
-            </a>
-        </div>
-        <div id="disqus_thread" class="accordion-body collapse">
-            <div class="accordion-inner">
-                <div class="comments">
-                    <div id="disqus_thread"></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://rhysyngsun.com/tag/continuous-integration.html">Continuous Integration</a>
+      <a href="http://rhysyngsun.com/tag/continuous-delivery.html">Continuous Delivery</a>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'rhysyngsun';
-        var disqus_identifier = 'http://rhysyngsun.com/my-ideal-continuous-integration-server.html';
-    var disqus_url = 'http://rhysyngsun.com/my-ideal-continuous-integration-server.html';
-
     (function() {
-         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-     })();
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>
+        Please enable JavaScript to view comments.
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-            <hr/>
-        </div>
-        <section>
-        <div class="span2" style="float:right;font-size:0.9em;">
-            <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2014-11-04T20:02:10-04:00">Nov 4, 2014</time>
-            <h4>Category</h4>
-            <a class="category-link" href="http://rhysyngsun.com/categories.html#continuous-integration-ref">Continuous Integration</a>
-            <h4>Tags</h4>
-            <ul class="list-of-tags tags-in-article">
-                <li><a href="http://rhysyngsun.com/tags.html#continuous-delivery-ref">Continuous Delivery
-                    <span>1</span>
-</a></li>
-                <li><a href="http://rhysyngsun.com/tags.html#continuous-integration-ref">Continuous Integration
-                    <span>1</span>
-</a></li>
-            </ul>
-<h4>Contact</h4>
-    <a href="Twitter" title="My https://twitter.com/rhysyngsun Profile" class="sidebar-social-links" target="_blank">
-    <i class="fa fa-https://twitter.com/rhysyngsun sidebar-social-links"></i></a>
-        </div>
-        </section>
-</div>
+</noscript>
 </article>
-                </div>
-                <div class="span1"></div>
-            </div>
-        </div>
-        <div id="push"></div>
-    </div>
-<footer>
-<div id="footer">
-    <ul class="footer-content">
-        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
-    </ul>
-</div>
-</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script>
-            function validateForm(query)
-            {
-                return (query.length > 0);
-            }
-        </script>
 
-            <script type="text/javascript">
-var disqus_shortname = 'rhysyngsun';
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
+    <footer>
+<p>
+  &copy; Nathan Levesque 2012-2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5772322-2', 'auto');
+  ga('send', 'pageview');
 </script>
-<script  language="javascript" type="text/javascript">
-function uncollapse() {
-    if (window.location.hash.match(/^#comment-\d+$/)) {
-        $('#disqus_thread').collapse('show');
-    }
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Rhysyngsun's Blog ",
+  "url" : "http://rhysyngsun.com",
+  "image": "//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac",
+  "description": "Nathan Levesque's Thoughts and Writings"
 }
 </script>
-<script type="text/javascript" language="JavaScript">
-uncollapse();
-window.onhashchange=function(){
-    if (window.location.hash.match(/^#comment-\d+$/))
-        window.location.reload(true);
-}
-</script>
-<script>
-$('#disqus_thread').on('shown', function () {
-    var link = document.getElementsByClassName('accordion-toggle');
-    var old_innerHTML = link[0].innerHTML;
-    $(link[0]).fadeOut(500, function() {
-        $(this).text('Click here to hide comments').fadeIn(500);
-    });
-    $('#disqus_thread').on('hidden', function () {
-        $(link[0]).fadeOut(500, function() {
-            $(this).text(old_innerHTML).fadeIn(500);
-        });
-    })
-})
-</script>
-
-
-    </body>
-    <!-- Theme: Elegant built for Pelican
-    License : http://oncrashreboot.com/pelican-elegant -->
+</body>
 </html>
