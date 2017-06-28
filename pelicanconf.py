@@ -46,7 +46,7 @@ MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
 FILENAME_METADATA='(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
-STATIC_PATHS = ['images', 'CNAME', 'theme/images', 'extra']
+STATIC_PATHS = ['images', 'CNAME', 'theme/images', 'extra', 'extra/.well-known']
 
 # Blogroll
 LINKS = []
