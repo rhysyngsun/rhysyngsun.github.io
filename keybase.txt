@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/rhysyngsun
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://rhysyngsun.com
+  * I am rhysyngsun (https://keybase.io/rhysyngsun) on keybase.
+  * I have a public key with fingerprint C458 C9BE 12C9 B8E4 6B5E  16C3 59B6 FB17 FFCA A7C6
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101dcaf45650fcade432fa512ad14cf295074123bc215a55920fadfe7188279baa20a",
+            "fingerprint": "c458c9be12c9b8e46b5e16c359b6fb17ffcaa7c6",
+            "host": "keybase.io",
+            "key_id": "59b6fb17ffcaa7c6",
+            "kid": "0101dcaf45650fcade432fa512ad14cf295074123bc215a55920fadfe7188279baa20a",
+            "uid": "ffab0ae49c7da77a46d9380ea47d9400",
+            "username": "rhysyngsun"
+        },
+        "revoke": {
+            "sig_ids": [
+                "0072736e219a8634640b361cea5d86d372b212df1ad1cf898b66ea34b201b7750f"
+            ]
+        },
+        "service": {
+            "hostname": "rhysyngsun.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1498661842,
+    "expire_in": 157680000,
+    "prev": "d1fb3cef0362833a7c6abd08e3c65fbcc36630ccf94087016289faec60757284",
+    "seqno": 19,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.72
+Comment: https://keybase.io/crypto
+
+yMJwAnicrZJbaFxFGMd3m6zFiFZJqa0SC9MKKqGd25mZswZE4oNiGmtT0ZLUZWbO
+zOaQ9pz1nN1t1loUCyKEpCwEE6xQ8fLUqhViC7WWNq0XWhHagPWGF7xWvLZqjWnR
+OUGf9NF5mGFm/t/v+3/fzLHLW3Jt+Rt+VvFnP8xcyJ84cr6W29B39NRWoOKgAYpb
+wZCZX8ymwKTV0lAYgCKACKJAS0s95kGrZWAowVZ6CMsAUW2x70FOESZKY+RJz/Mx
+tDKwhiMhMPeVlBhK0AlsGJVNUknCqOqwmnpC+8og7GZhKFOeQUwTz1fMKsStSyW5
+Zi5wME6zCGdOydSsCmN35jaleXv/of+ffdfmcdZKBaWhvuaB5FxSFvhEQCMpD3wK
+YSZMTRLJzcapk8FG2ojKaS0C2zpBYurxkMk6m4ZlZzsFxX4AIcecMIORLwUjlFGo
+CEPaSC8QLCAcK4xwYJGzq63whWLMSEIVhkhx7moCGx3b5ayHeh6e9elf+VfpeLPz
+VkniaqzjTe5usFqtFDNb1UYl024xqvQ3paTCKHDP5ALqJknDOAJF5JS6GmZYRH3B
+GBIUdwIzXAkTUwozhceZgG5kaUzdIQNkFdHGQsKwICR7F6kCKAzRzLNKa8IYgVpb
+1znBIXIq30qjGeQex4KCrK4HotixfedTlh3TtS6S1VpiwLbpwwOtuXxb7pLCguz/
+5touvfKfXz0zu/DP2tTcgbfGrjrZXHr2ezgyGR+8+sSXh8TcbOGrsxd0R1/+xvcf
+3NH+2OCSFY93XT86vW7sjc8HPkpX/gp2tpKDA11PHileWzhz53cX63vKu358dvbt
+7o/Hjy8f7WjeMvzEU+VDX/x2bsXzw6+v4wt+Gfsd/LF05qcPlzz9Yuv+/d3bG8ub
+XY9+sGvnHc1P7+u9eHxfZeDA4nFU+OTwN5PvgfrtvVv6eyfm7jpN7t795tqJJj3d
+g0XhnX2lNY+cn+i77N5FI1PTZ157+J7b7NT9O3rOvdB3xbcda3aHI9dVboL43UUP
+lW/++qXJlvFlr76yoX/ZaD2/99ZT7c+sXUlbhvdMLL5m/cnVL6+e6n6ObG/v+Qvg
+YmP3
+=1Xzu
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rhysyngsun
+
+==================================================================
