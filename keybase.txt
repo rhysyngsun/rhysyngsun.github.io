@@ -79,3 +79,86 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/rhysyngsun
 
 ==================================================================
+
+==================================================================
+https://keybase.io/rhysyngsun
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://nathanlevesque.com
+  * I am rhysyngsun (https://keybase.io/rhysyngsun) on keybase.
+  * I have a public key with fingerprint C458 C9BE 12C9 B8E4 6B5E  16C3 59B6 FB17 FFCA A7C6
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101dcaf45650fcade432fa512ad14cf295074123bc215a55920fadfe7188279baa20a",
+      "fingerprint": "c458c9be12c9b8e46b5e16c359b6fb17ffcaa7c6",
+      "host": "keybase.io",
+      "key_id": "59b6fb17ffcaa7c6",
+      "kid": "0101dcaf45650fcade432fa512ad14cf295074123bc215a55920fadfe7188279baa20a",
+      "uid": "ffab0ae49c7da77a46d9380ea47d9400",
+      "username": "rhysyngsun"
+    },
+    "merkle_root": {
+      "ctime": 1532104536,
+      "hash_meta": "c642d5d845d5fa29fc3880696b0213840d6b8624c42cfb2062cfae77bcbd941c",
+      "seqno": 3302589
+    },
+    "revoke": {
+      "sig_ids": [
+        "6e9fdc910fb3736edbc57d19ab4da96458a54df3c5a5972d500160dcd526760b0f"
+      ]
+    },
+    "service": {
+      "hostname": "nathanlevesque.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1532104547,
+  "expire_in": 157680000,
+  "prev": "d56719b24bc1e59d2226803f61ba89452566ec47ea8209671c0247c1c3a0ec28",
+  "seqno": 29,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.77
+Comment: https://keybase.io/crypto
+
+yMLBAnicrZNtiBVVHMbvuiZ6w9TIIqKIkYVat/WcM+dlzu0FkmVLFgmiErrp7bze
+O96Xuc7Mvdu23KX2gxCRRiSLYC2GoX4I3GIjwyxFKzSLVsoQwawPa9gL0hu4EZ1Z
+jCD62Hw4h5nz/J//c35nzrGl3bl81x2XZXThx9N/dJ082mnlig8vU6OejPSIVxj1
+qmZ+MjVtkrRUDbVX8AAEUCthMaEEWCW0wT6ygkAkNMTKIk4AwxD5UiFIBCEcASu0
+NQwGAWJcCoGA8Po8GzbKJm7GYSN1tgqTQHFpIHJjYDCVxECqfMIltRIy61oJpqgr
+rERJVuHCSZGY/jBy39xLaT7ef+j/59yteTtrhQTCYK6YFowJTDX3A2AEZppjADJh
+YuKGqBunjisjyUijnLQaXqfPq5u4WjOlOIrSDK9Kw0wEiY8gwMSnbosiqZTqJhUZ
+GYqRJjrARBMrELfKDwJAOZUAQT/AQFMZUIQVRspKBKibhGFMKumSQOWSJGZLI/IK
+vg8QCbhLEJt2VDVZ8yQsO3CJVyh61HCrFYfASp/51GipCNOQC4m14NQdkCBYW185
+Opy5TABACrTSBFFGgQTW29jJmsXtUM2bZyd1lUBDpBXRqJm2Sba0TL+K6i5XM47S
+SEU1t15J02Yhg5OONDP9sJGlq04lGTa0+1lcQdvESRg1HCyn/Bc3zPo881QzjE0p
+zBSE0QC4J2tj2s5SE8oglwhLBQ3hGiHkFL6lUIqAY4IIpUZhZkSAAHdaBRBmCipf
+AKNQ8A9IxF1OUXaeDp/bWSs2XufoB08szHXlc4uuWZDdolx+yfK/79a2/OLcngd2
+Pbhafrb+nW13X/do9flN179y8emZT2ZGj7SGgsUnBk6tmj5z4/3r3+r96qXw/fLx
++tSa1cdW7qz/8sXeJ8d+WHdh7ZfP3DD13Uebg6nbes7e12tkZ2780tD+k5d7ur8e
+TDbu/+2R8d93qQUz7UP93StPDM8unJw9vcG/fYw8u6n4zfIrH586eP7AWPGF/J1r
+rky3Pr934qazP98VfTu989JAK3x9u7+7/Oc9S9mZ4epDQ4cXFTcTL5r+8LFx9fbs
+gYO1VZMT63b85N3aOr7n8bE336jbmcGtsOfltf6Lk9een9u7ZPxc7rm5HUOH9x1J
+3s0Nbt/9nqpU2703Xzz36sCvW1fcsiyY+HTw0Gvf/wW2oYfF
+=xLG1
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rhysyngsun
+
+==================================================================
+
