@@ -4,13 +4,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://rhysyngsun.com/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="http://rhysyngsun.com/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://rhysyngsun.com/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://rhysyngsun.com/theme/font-awesome/css/font-awesome.min.css">
 
 
-    <link href="http://rhysyngsun.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog Atom">
+    <link href="https://rhysyngsun.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Rhysyngsun's Blog Atom">
 
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
@@ -37,11 +37,11 @@
 <meta property="og:title" content="Mozilla Dev Derby July"/>
 <meta property="og:description" content="I've spent some time this weekend working on an entry for Mozilla's Dev Derby. You can find my entry hosted on the competition site. This is my first entry so please, go ahead and vote for it. I also noted today before I submitted my entry that I'm not the only one who thought to make a clock. It's interesting to see our our visuals, animations, and implementations differ. How I Did It I've this entry available as a GitHub repo so you can browse the source yourself. I wanted this to be a relatively quick weekend project and fun to do. A requirement of the competition is for it to work across various browsers, so I started with Sass and Compass to deal with generating a lot of the yuck that comes with browser specific code (particularly vendor-prefixed CSS). Sass was also very useful in generating the animations. Just …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://rhysyngsun.com/mozilla-dev-derby-july.html"/>
+<meta property="og:url" content="https://rhysyngsun.com/mozilla-dev-derby-july.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2012-07-29 16:30:00-04:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="http://rhysyngsun.com/author/nathan-levesque.html">
+<meta property="article:author" content="https://rhysyngsun.com/author/nathan-levesque.html">
 <meta property="article:section" content="CSS"/>
 <meta property="article:tag" content="CSS3"/>
 <meta property="article:tag" content="Sass"/>
@@ -54,10 +54,10 @@
 <body>
   <aside>
     <div>
-      <a href="http://rhysyngsun.com">
+      <a href="https://rhysyngsun.com">
         <img src="//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac" alt="Nathan Levesque" title="Nathan Levesque">
       </a>
-      <h1><a href="http://rhysyngsun.com">Nathan Levesque</a></h1>
+      <h1><a href="https://rhysyngsun.com">Nathan Levesque</a></h1>
 
 <p>Senior Software Engineer</p>
 
@@ -75,14 +75,14 @@
   <main>
 
     <nav>
-      <a href="http://rhysyngsun.com">    Home
+      <a href="https://rhysyngsun.com">    Home
 </a>
 
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
-      <a href="http://rhysyngsun.com/feeds/all.atom.xml">    Atom
+      <a href="https://rhysyngsun.com/feeds/all.atom.xml">    Atom
 </a>
 
     </nav>
@@ -91,7 +91,7 @@
   <header>
     <h1 id="mozilla-dev-derby-july">Mozilla Dev Derby July</h1>
     <p>
-          Posted on July 29, 2012 in <a href="http://rhysyngsun.com/category/css.html">CSS</a>
+          Posted on July 29, 2012 in <a href="https://rhysyngsun.com/category/css.html">CSS</a>
 
 
         &#8226; 2 min read
@@ -105,7 +105,7 @@
 <h4>How I Did It</h4>
 <p>I've this entry available as a <a href="https://github.com/rhysyngsun/devderby-07-2012">GitHub repo</a> so you can browse the source yourself.</p>
 <p>I wanted this to be a relatively quick weekend project and fun to do. A requirement of the competition is for it to work across various browsers, so I started with <a href="http://sass-lang.com/">Sass</a> and <a href="http://compass-style.org/">Compass</a> to deal with generating a lot of the yuck that comes with browser specific code (particularly vendor-prefixed CSS). Sass was also very useful in generating the animations. Just compare the <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/a55 linesnimations.scss">Sass source</a> (55 lines) and the <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/css/animations.css">generated CSS</a> (1914 lines) to get an idea of how painful and impossible this would have been to do in a weekend.</p>
-<p><img alt="CSS3 Roman Numerals" src="http://rhysyngsun.com/images/07-2012/numerals.png"></p>
+<p><img alt="CSS3 Roman Numerals" src="https://rhysyngsun.com/images/07-2012/numerals.png"></p>
 <p>Getting the hands of the clock was relatively straightforward. The difficult part was in positioning the Roman numerals. In order for those numerals to fit correctly in the ring around the edge, they had to be rotated individually around the center of the clock face. Additionally the overall set of numerals for a given hour had to be approximately centered on the radius line for that hour. The combination of those two pretty much ruled out positioning individual characters as a sane strategy.</p>
 <p>Instead, I opted for grouping the numerals (wrapping in <code>&lt;span&gt;</code> tags) in a parent <code>&lt;div&gt;</code> and rotating that <code>&lt;div&gt;</code> around the center. I then individually tweaked the characters by rotating them around the same point in smaller increments. I also created guides to help me align the numerals on the radius lines. You can see it commented out <a href="https://github.com/rhysyngsun/devderby-07-2012/blob/master/sass/styles.scss#L39">on line 39 here</a>.</p>
 <p>All in all it took me about 8-10 hours over the weekend to create this. Most of that time was spent playing with css tranforms.</p>
@@ -113,9 +113,9 @@
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://rhysyngsun.com/tag/css3.html">CSS3</a>
-      <a href="http://rhysyngsun.com/tag/sass.html">Sass</a>
-      <a href="http://rhysyngsun.com/tag/dev-derby.html">Dev Derby</a>
+      <a href="https://rhysyngsun.com/tag/css3.html">CSS3</a>
+      <a href="https://rhysyngsun.com/tag/sass.html">Sass</a>
+      <a href="https://rhysyngsun.com/tag/dev-derby.html">Dev Derby</a>
     </p>
   </div>
 
@@ -175,7 +175,7 @@
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Rhysyngsun's Blog ",
-  "url" : "http://rhysyngsun.com",
+  "url" : "https://rhysyngsun.com",
   "image": "//0.gravatar.com/avatar/73bf4b553a05187d21074a7e7539f1ac",
   "description": "Nathan Levesque's Thoughts and Writings"
 }

@@ -4,77 +4,77 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://rhysyngsun.com/</loc>
-<lastmod>2017-06-28T11:01:52-00:00</lastmod>
+<loc>https://rhysyngsun.com/</loc>
+<lastmod>2018-07-20T12:42:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/archives.html</loc>
-<lastmod>2017-06-28T11:01:52-00:00</lastmod>
+<loc>https://rhysyngsun.com/archives.html</loc>
+<lastmod>2018-07-20T12:42:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/tags.html</loc>
-<lastmod>2017-06-28T11:01:52-00:00</lastmod>
+<loc>https://rhysyngsun.com/tags.html</loc>
+<lastmod>2018-07-20T12:42:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/categories.html</loc>
-<lastmod>2017-06-28T11:01:52-00:00</lastmod>
+<loc>https://rhysyngsun.com/categories.html</loc>
+<lastmod>2018-07-20T12:42:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/slightly-less-worse-ways.html</loc>
+<loc>https://rhysyngsun.com/slightly-less-worse-ways.html</loc>
 <lastmod>2015-03-11T07:44:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/thoughts-on-cloudformation.html</loc>
+<loc>https://rhysyngsun.com/thoughts-on-cloudformation.html</loc>
 <lastmod>2015-03-10T08:10:10-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/my-ideal-continuous-integration-server.html</loc>
+<loc>https://rhysyngsun.com/my-ideal-continuous-integration-server.html</loc>
 <lastmod>2014-11-04T20:02:10-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/connascence-in-requirejs.html</loc>
+<loc>https://rhysyngsun.com/connascence-in-requirejs.html</loc>
 <lastmod>2014-03-06T17:50:15-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html</loc>
+<loc>https://rhysyngsun.com/grails-using-a-specific-version-of-lesscss-with-lesscss-resources.html</loc>
 <lastmod>2013-03-11T09:30:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/mozilla-dev-derby-july.html</loc>
+<loc>https://rhysyngsun.com/mozilla-dev-derby-july.html</loc>
 <lastmod>2012-07-29T16:30:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://rhysyngsun.com/from-posterous-to-jekyll-and-github-pages.html</loc>
+<loc>https://rhysyngsun.com/from-posterous-to-jekyll-and-github-pages.html</loc>
 <lastmod>2012-04-06T15:33:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
